@@ -256,7 +256,7 @@ function TopNav() {
 }
 
 function SectionEyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="text-xs font-mono uppercase tracking-widest text-primary/70 mb-3">{children}</p>;
+  return <p className="text-xs font-mono uppercase tracking-widest text-primary/80 mb-3">{children}</p>;
 }
 
 const LENGTH_OPTIONS = [
@@ -1153,7 +1153,7 @@ export function WelcomeScreen({
           </div>
           <div className="border-t border-border/20 py-5">
             <div className="max-w-6xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
-              <span className="text-muted-foreground/70">© Rise to Riches · Free stock market simulator</span>
+              <span className="text-muted-foreground/75">© Rise to Riches · Free stock market simulator</span>
               <div className="flex items-center gap-3">
                 <span className="text-muted-foreground font-medium">
                   Educational simulation only. Not financial advice. No real-money trading.
