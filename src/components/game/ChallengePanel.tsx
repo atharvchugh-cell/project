@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Swords, Image as ImageIcon, Copy, Check, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { challengeUrl, createChallenge, formatBig, makeShareImage, resultUrl, shareImage, type Challenge } from '@/lib/challenge';
+import { appOrigin } from '@/lib/basePath';
 
 interface Props {
   traceId: string | null;
@@ -40,7 +41,7 @@ export function ChallengePanel({ traceId, isMultiplayer, name, value, ret, years
 
   const image = async () => {
     const blob = await makeShareImage({ name, value, ret, years, footer: 'investmentsimulator.app · free stock market simulator' });
-    await shareImage(blob, `My Rise to Riches result: ${formatBig(value)}`, traceId ? resultUrl(traceId) : window.location.origin);
+    await shareImage(blob, `My Rise to Riches result: ${formatBig(value)}`, traceId ? resultUrl(traceId) : appOrigin());
   };
 
   return (

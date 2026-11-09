@@ -9,6 +9,7 @@ import {
 } from "recharts";
 import { encodeScenario, loadScenario, saveScenario, storeSavedScenario, makeScenarioCopy, DEFAULT_SCENARIO } from "@/lib/sandbox/state";
 import { simulate } from "@/lib/sandbox/simulate";
+import { appOrigin } from '@/lib/basePath';
 
 export default function SandboxResults() {
   const nav = useNavigate();
@@ -51,7 +52,7 @@ export default function SandboxResults() {
 
   const share = () => {
     const enc = encodeScenario(scenario);
-    navigator.clipboard.writeText(`${location.origin}/sandbox/setup?scenario=${enc}`).then(
+    navigator.clipboard.writeText(`${appOrigin()}/sandbox/setup?scenario=${enc}`).then(
       () => toast.success("Share link copied"),
       () => toast.error("Copy failed"),
     );

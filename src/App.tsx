@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BASE_PATH } from "@/lib/basePath";
 import { RealEstateSchema } from "./seo/RealEstateSchema";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
@@ -62,7 +63,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={BASE_PATH || "/"}>
         <RouteHead />
         <main>
           <Suspense fallback={null}>

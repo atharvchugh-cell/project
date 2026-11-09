@@ -1,6 +1,7 @@
 // "Beat my run" challenges: a frozen copy of a finished solo game.
 // The target score always comes from the server's stored run, never the client.
 import { supabase } from '@/integrations/supabase/client';
+import { appOrigin } from '@/lib/basePath';
 
 export interface ChallengeAttempt { display_name: string; ending_value: number; return_pct: number; played_at: string }
 export interface Challenge {
@@ -23,8 +24,8 @@ export async function createChallenge(traceId: string): Promise<string> {
   return String(data);
 }
 
-export const challengeUrl = (code: string) => `${window.location.origin}/c/${code}`;
-export const resultUrl = (traceId: string) => `${window.location.origin}/r/${traceId}`;
+export const challengeUrl = (code: string) => `${appOrigin()}/c/${code}`;
+export const resultUrl = (traceId: string) => `${appOrigin()}/r/${traceId}`;
 
 export function setActiveChallenge(c: Challenge) {
   try { sessionStorage.setItem(KEY, JSON.stringify(c)); } catch { /* ignore */ }

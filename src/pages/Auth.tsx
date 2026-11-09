@@ -7,6 +7,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { appOrigin } from '@/lib/basePath';
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export default function Auth() {
     setBusy(true); setErr(null); setMsg(null);
     if (mode === "signup") {
       const { data, error } = await supabase.auth.signUp({
-        email, password, options: { emailRedirectTo: `${window.location.origin}/` },
+        email, password, options: { emailRedirectTo: `${appOrigin()}/` },
       });
       if (error) setErr(error.message);
       else if (!data.session) setMsg("Check your email to confirm your account, then sign in.");
@@ -38,7 +39,7 @@ export default function Auth() {
 
   const google = async () => {
     setErr(null);
-    const r = await lovable.auth.signInWithOAuth("google", { redirect_uri: window.location.origin + "/auth" });
+    const r = await lovable.auth.signInWithOAuth("google", { redirect_uri: appOrigin() + "/auth" });
     if (r.error) setErr(r.error.message ?? "Google sign-in failed");
   };
 

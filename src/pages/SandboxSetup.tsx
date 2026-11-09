@@ -16,6 +16,7 @@ import {
   checkAllocation,
   normalizeAllocation,
 } from "@/lib/sandbox/state";
+import { appOrigin } from '@/lib/basePath';
 
 const STEPS = ["Starting Point", "Portfolio", "Scenario Controls", "Timeline"] as const;
 
@@ -630,7 +631,7 @@ function StepTimeline({ s, update }: { s: SandboxScenario; update: (p: Partial<S
 
   const shareLink = () => {
     const enc = encodeScenario(s);
-    const url = `${location.origin}/sandbox/setup?scenario=${enc}`;
+    const url = `${appOrigin()}/sandbox/setup?scenario=${enc}`;
     navigator.clipboard.writeText(url).then(
       () => toast.success("Share link copied"),
       () => toast.error("Copy failed"),

@@ -5,6 +5,7 @@
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { HelmetProvider, type HelmetServerState } from "react-helmet-async";
+import { BASE_PATH, withBase } from "./lib/basePath";
 import Guide from "./pages/Guide";
 import Learn from "./pages/Learn";
 import ForTeachers from "./pages/ForTeachers";
@@ -66,7 +67,7 @@ export function render(path: string): { body: string; scripts: string } | null {
   const ctx: { helmet?: HelmetServerState } = {};
   const body = renderToString(
     <HelmetProvider context={ctx}>
-      <StaticRouter location={path}>
+      <StaticRouter basename={BASE_PATH || "/"} location={withBase(path)}>
         <RouteHead />
         <main>
           <Page />

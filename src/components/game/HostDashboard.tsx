@@ -11,6 +11,7 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 import { MultiplayerReveal } from './MultiplayerReveal';
 import { getPlayerStats } from '@/lib/multiplayerStats';
 import { RoomChat } from './RoomChat';
+import { appOrigin } from '@/lib/basePath';
 
 
 interface HostDashboardProps {
@@ -154,7 +155,7 @@ export function HostDashboard({ hostSession, onEnd }: HostDashboardProps) {
   const events = HISTORICAL_EVENTS[simulatedYear] || [];
   const isEnded = session.status === 'ended' || elapsedSeconds >= totalGameSeconds;
   const secondsSinceUpdate = Math.max(0, Math.round((now - lastUpdate) / 1000));
-  const joinLink = `${window.location.origin}/join?code=${encodeURIComponent(session.game_code)}`;
+  const joinLink = `${appOrigin()}/join?code=${encodeURIComponent(session.game_code)}`;
   const invite = async () => {
     if (navigator.share) {
       try {

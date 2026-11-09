@@ -24,6 +24,7 @@ import {
   LineChart, Line, AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer,
   BarChart, Bar, Cell, Legend,
 } from 'recharts';
+import { appOrigin } from '@/lib/basePath';
 
 
 interface EndGameScreenProps {
@@ -993,7 +994,7 @@ function LeaderboardSubmitCard(props: LeaderboardSubmitCardProps) {
       end: String(props.endYear),
       mp: props.isMultiplayer ? '1' : '0',
     });
-    return `${window.location.origin}/share?${params.toString()}`;
+    return `${appOrigin()}/share?${params.toString()}`;
   }, [submittedName, props]);
 
   const copy = async () => {

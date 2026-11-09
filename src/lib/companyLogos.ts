@@ -1,5 +1,7 @@
+import { withBase } from './basePath';
+
 /** Shared local company-logo registry. Keep filenames aligned with stock tickers. */
-export const COMPANY_LOGOS: Readonly<Record<string, string>> = {
+const LOGO_PATHS: Readonly<Record<string, string>> = {
   'AAPL': '/company-logos/AAPL.png',
   'ABBV': '/company-logos/ABBV.png',
   'ABNB': '/company-logos/ABNB.png',
@@ -167,6 +169,11 @@ export const COMPANY_LOGOS: Readonly<Record<string, string>> = {
   'XRX': '/company-logos/XRX.png',
   'XYZ': '/company-logos/XYZ.png',
 } as const;
+
+/** Logo URLs, prefixed with the deployment base path (unchanged at the site root). */
+export const COMPANY_LOGOS: Readonly<Record<string, string>> = Object.fromEntries(
+  Object.entries(LOGO_PATHS).map(([ticker, path]) => [ticker, withBase(path)]),
+);
 
 const TICKER_ALIASES: Readonly<Record<string, string>> = {
   BRK: 'BRK.B',

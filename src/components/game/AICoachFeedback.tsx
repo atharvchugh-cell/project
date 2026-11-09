@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Sparkles, Loader2, Award, TrendingUp, AlertTriangle, RefreshCw, Lightbulb, GitBranch, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { invokeAI } from '@/lib/aiInvoke';
+import { withBase } from '@/lib/basePath';
 
 interface AssetSummary {
   ticker: string;
@@ -123,7 +124,7 @@ export function AICoachFeedback({ payload }: Props) {
       </div>
 
       {!requested && <div className="space-y-3"><p className="text-sm text-muted-foreground">Requesting a review sends your game statistics and holdings through Lovable’s AI service. Avoid personal information. You may skip this and keep playing.</p><Button onClick={() => analyze(tone, focus)}>Request AI review</Button></div>}
-      <p className="text-xs text-muted-foreground mt-3">AI-generated feedback may be wrong. Virtual money only; no real trades or personalized investment advice. <a href="/privacy" className="underline">Privacy</a> · <a href="/methodology" className="underline">Methodology</a></p>
+      <p className="text-xs text-muted-foreground mt-3">AI-generated feedback may be wrong. Virtual money only; no real trades or personalized investment advice. <a href={withBase("/privacy")} className="underline">Privacy</a> · <a href={withBase("/methodology")} className="underline">Methodology</a></p>
       {loading && (
         <div className="flex items-center gap-3 text-muted-foreground py-8 justify-center">
           <Loader2 className="w-5 h-5 animate-spin text-primary" />

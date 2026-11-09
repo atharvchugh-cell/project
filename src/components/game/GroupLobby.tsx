@@ -7,6 +7,7 @@ import { useHostSession, usePlayerSession } from '@/hooks/useMultiplayer';
 import { prefetchHost, prefetchMultiplayerGame } from '@/lib/prefetch';
 import { toast } from 'sonner';
 import { RoomChat } from './RoomChat';
+import { appOrigin } from '@/lib/basePath';
 
 interface GroupLobbyProps {
   hostSession: ReturnType<typeof useHostSession>;
@@ -92,7 +93,7 @@ function CreateGroup({ onBack, onGameStart }: {
     createSession(hostName.trim(), duration, gameMode, classroom);
   };
 
-  const joinLink = session ? `${window.location.origin}/join?code=${session.game_code}` : '';
+  const joinLink = session ? `${appOrigin()}/join?code=${session.game_code}` : '';
 
   const copyCode = () => {
     if (session) {
