@@ -1,0 +1,11 @@
+import { describe,expect,it } from 'vitest';
+import { initialSocialState,advanceSocialState,validateSocialAction,gameReducer,packState,unpackState,type SocialManifest } from './socialMarket';
+import { calculateInvestmentReturn } from './investmentReturn';
+const manifest:SocialManifest={startYear:1990,duration:10,mode:'normal',dataVersion:2,assets:[{id:'a',ticker:'A',name:'A',type:'stock',prices:Array(241).fill(100),unlockYear:1},{id:'locked',ticker:'B',name:'B',type:'stock',prices:Array(241).fill(100),unlockYear:3}],lifeEvents:[]};
+describe('server social accounting',()=>{
+  it('starts everyone at $5,000 and deposits never count as profit',()=>{const s=advanceSocialState(initialSocialState(manifest),30);expect(s.cash).toBe(15000);expect(s.totalContributions).toBe(15000);expect(calculateInvestmentReturn(s.cash,s.totalContributions)).toBe(0);});
+  it('rejects locked stocks and overselling',()=>{const s=initialSocialState(manifest);expect(()=>validateSocialAction(s,{type:'BUY',assetId:'locked',shares:1})).toThrow();expect(()=>validateSocialAction(s,{type:'SELL',assetId:'a',shares:1})).toThrow();});
+  it('rejects overspending and early full-value CD withdrawal',()=>{const s=initialSocialState(manifest);expect(()=>validateSocialAction(s,{type:'BUY',assetId:'a',shares:51})).toThrow();const cd=gameReducer(s,{type:'BUY_CD',cdType:'1y',amount:1000,rate:0.08});expect(()=>validateSocialAction(cd,{type:'WITHDRAW_CD',cdId:'cd-1',early:false})).toThrow();expect(gameReducer(cd,{type:'WITHDRAW_CD',cdId:'cd-1',early:true}).cash).toBe(4800);});
+  it('repeated catchup does not duplicate contributions',()=>{const a=advanceSocialState(initialSocialState(manifest),30);expect(advanceSocialState(a,30).cash).toBe(15000);expect(unpackState(packState(a),manifest).unlockedAssetIds.has('a')).toBe(true);});
+  it('shared life events reduce capital, not investment profit',()=>{const s=advanceSocialState(initialSocialState({...manifest,lifeEvents:[{second:120,cost:2000,message:'Expense',triggered:false}]}),120);expect(s.totalContributions).toBe(43000);expect(s.cash).toBe(43000);expect(calculateInvestmentReturn(s.cash,s.totalContributions)).toBe(0);});
+});

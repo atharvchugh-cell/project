@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "sdk_version": "0.20.1",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "investment-simulator-mcp",
+      "version": "0.1.0",
+      "title": "Investment Simulator"
+    },
+    "tools": [
+      {
+        "name": "get_leaderboard",
+        "title": "Get leaderboard",
+        "description": "Fetch top players from the Investment Simulator leaderboard. Filter by time window (game year range), mode (solo/group), and sort by ending wealth or return %.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "window": {
+              "type": "string",
+              "enum": [
+                "all",
+                "1990-2010",
+                "2000-2020",
+                "2010-2025"
+              ],
+              "default": "all",
+              "description": "Preset game-year window."
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "all",
+                "solo",
+                "group"
+              ],
+              "default": "all",
+              "description": "Filter by game mode."
+            },
+            "sort": {
+              "type": "string",
+              "enum": [
+                "wealth",
+                "return"
+              ],
+              "default": "wealth",
+              "description": "Sort by final wealth or return %."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 25
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_game_info",
+        "title": "Get game info",
+        "description": "Return an overview of the Investment Simulator: available game modes, durations, scoring, and links. Use this to explain the game to a user before pulling leaderboard data.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "type": "string",
+              "enum": [
+                "all",
+                "stock",
+                "real-estate",
+                "hard"
+              ],
+              "default": "all",
+              "description": "Return info for one mode or all of them."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}

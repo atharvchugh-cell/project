@@ -1,0 +1,363 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm dark base (#0F1117 territory) instead of pure black */
+    --background: 220 10% 7%;
+    --foreground: 40 20% 92%;
+
+    /* Cards lifted with a warmer near-#161B22 tone */
+    --card: 220 9% 10.5%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 220 9% 12%;
+    --popover-foreground: 40 20% 92%;
+
+    /* Softer emerald (Tailwind emerald-500) — friendlier than neon lime */
+    --primary: 160 84% 39%;
+    --primary-foreground: 160 70% 7%; /* dark text on emerald: ~7:1 contrast */
+
+    --secondary: 220 13% 16%;
+    --secondary-foreground: 213 27% 88%;
+
+    --muted: 220 13% 14%;
+    --muted-foreground: 35 8% 64%;
+
+    /* Warm amber accent (Tailwind amber-500) for warmth + secondary highlights */
+    --accent: 38 92% 50%;
+    --accent-foreground: 38 92% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 20%;
+    --ring: 160 84% 39%;
+
+    --radius: 0.75rem;
+    --radius-control: 0.5rem;
+    --motion-fast: 150ms;
+    --motion-base: 200ms;
+    --shadow-panel: 0 1px 0 hsl(0 0% 100% / 0.03) inset, 0 8px 24px -12px hsl(0 0% 0% / 0.5);
+
+    /* Tailwind green-500 for positive returns — softer than neon */
+    --gain: 142 71% 45%;
+    --loss: 0 84% 60%;
+    --gold: 38 92% 50%;
+    /* Distinct, legible player series on the host's dark chart. */
+    --series-1: 160 84% 45%;
+    --series-2: 42 92% 62%;
+    --series-3: 199 84% 62%;
+    --series-4: 350 82% 68%;
+    --series-5: 278 76% 72%;
+    --series-6: 24 92% 61%;
+    --series-7: 174 65% 63%;
+    --series-8: 317 74% 67%;
+
+    --sidebar-background: 220 25% 8%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 155 72% 40%;
+    --sidebar-primary-foreground: 155 70% 7%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 15% 16%;
+    --sidebar-ring: 155 72% 40%;
+
+    /* Sandbox identity — dark purple, distinct from green stocks / amber real-estate */
+    --sandbox-bg: 260 40% 5%;
+    --sandbox-surface: 262 35% 10%;
+    --sandbox-surface-2: 262 30% 14%;
+    --sandbox-border: 265 30% 22%;
+    --sandbox-primary: 270 70% 70%;
+    --sandbox-primary-foreground: 265 50% 8%;
+    --sandbox-accent: 300 90% 62%;
+    --sandbox-text: 265 40% 96%;
+    --sandbox-muted: 260 25% 70%;
+  }
+}
+
+@layer utilities {
+  .sandbox-scope {
+    background-color: hsl(var(--sandbox-bg));
+    color: hsl(var(--sandbox-text));
+  }
+  .sandbox-surface {
+    background-color: hsl(var(--sandbox-surface));
+    border-color: hsl(var(--sandbox-border));
+  }
+  .sandbox-surface-2 {
+    background-color: hsl(var(--sandbox-surface-2));
+    border-color: hsl(var(--sandbox-border));
+  }
+  .sandbox-border { border-color: hsl(var(--sandbox-border)); }
+  .sandbox-text { color: hsl(var(--sandbox-text)); }
+  .sandbox-muted { color: hsl(var(--sandbox-muted)); }
+  .sandbox-primary { color: hsl(var(--sandbox-primary)); }
+  .sandbox-accent { color: hsl(var(--sandbox-accent)); }
+  .bg-sandbox-primary { background-color: hsl(var(--sandbox-primary)); }
+  .bg-sandbox-accent { background-color: hsl(var(--sandbox-accent)); }
+  .bg-sandbox-surface { background-color: hsl(var(--sandbox-surface)); }
+  /* Glows retired: kept as no-ops so older markup stays valid. */
+  .glow-sandbox, .glow-sandbox-soft { box-shadow: var(--shadow-panel); }
+  .animate-sandbox-pulse { animation: none; }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Instrument Sans', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+}
+
+/* Private admin theme: isolated from all public pages and games. */
+@layer utilities {
+  .admin-dashboard-scope {
+    --background: 210 10% 8%; /* #121416 */
+    --card: 206 10% 14%; /* #202427 */
+    --foreground: 0 0% 90%;
+    --card-foreground: 0 0% 90%;
+    --primary: 160 64% 52%; /* #34d399 */
+    --primary-foreground: 210 10% 8%;
+    --accent: 45 96% 56%; /* #fbbf24 */
+    --accent-foreground: 210 10% 8%;
+    --border: 206 9% 22%;
+    --input: 206 9% 25%;
+    --secondary: 206 10% 18%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 206 10% 18%;
+    --muted-foreground: 206 7% 65%;
+    --popover: 206 10% 14%;
+    --popover-foreground: 0 0% 90%;
+    --ring: 160 64% 52%;
+    --gain: 160 64% 52%;
+    --radius: 0.5rem;
+    --admin-surface-shadow: 0 1px 0 hsl(0 0% 100% / 0.04) inset;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+  }
+  .admin-dashboard-scope h1, .admin-dashboard-scope h2,
+  .admin-dashboard-scope h3, .admin-dashboard-scope h4,
+  .admin-dashboard-scope .font-display, .admin-heading {
+    font-family: 'Sora', system-ui, sans-serif;
+    letter-spacing: 0;
+  }
+  .admin-dashboard-scope .font-mono { font-family: 'Manrope', system-ui, sans-serif; }
+  .admin-metric { box-shadow: var(--admin-surface-shadow); }
+}
+
+@layer utilities {
+  .font-mono-numbers {
+        font-variant-numeric: tabular-nums;
+  }
+
+  .text-gain {
+    color: hsl(var(--gain));
+  }
+
+  .text-loss {
+    color: hsl(var(--loss));
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .bg-gain\/10 {
+    background-color: hsl(var(--gain) / 0.1);
+  }
+
+  .bg-loss\/10 {
+    background-color: hsl(var(--loss) / 0.1);
+  }
+
+  .glow-primary, .glow-gold { box-shadow: var(--shadow-panel); }
+
+  @keyframes ticker-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .animate-ticker {
+    animation: ticker-pulse 1s ease-in-out;
+  }
+
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+
+  @keyframes count-up {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .animate-count-up {
+    animation: count-up 0.3s ease-out;
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-33.333%); }
+  }
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  /* Numbers align through tabular figures in the primary font */
+  .font-mono, .tabular-nums { font-variant-numeric: tabular-nums; letter-spacing: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+}
+
+@layer utilities {
+  .font-brand { font-family: 'Playfair Display', Georgia, serif; }
+  /* Market-history backdrop: sparse grid intersections + grain, masked away from text */
+  .market-grid {
+    background-image: radial-gradient(hsl(var(--foreground) / 0.08) 1px, transparent 1.2px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 70% 60% at 75% 40%, #000 20%, transparent 75%);
+  }
+  .section-rule { border-top: 1px solid hsl(var(--border)); position: relative; }
+}
+
+/* Client Contracts: charcoal/navy fund-manager workspace with amber and crimson. */
+.fund-theme {
+  --background: 222 28% 7%;
+  --foreground: 40 22% 92%;
+  --card: 222 24% 10.5%;
+  --card-foreground: 40 22% 92%;
+  --popover: 222 24% 10.5%;
+  --popover-foreground: 40 22% 92%;
+  --primary: 38 88% 55%;
+  --primary-foreground: 30 60% 8%;
+  --secondary: 222 18% 16%;
+  --secondary-foreground: 40 22% 92%;
+  --muted: 222 18% 15%;
+  --muted-foreground: 220 12% 64%;
+  --accent: 350 62% 46%;
+  --accent-foreground: 0 0% 98%;
+  --border: 222 16% 20%;
+  --input: 222 16% 22%;
+  --ring: 38 88% 55%;
+  --gain: 152 50% 50%;
+  --loss: 350 70% 58%;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.fund-theme h1, .fund-theme h2, .fund-theme h3 { letter-spacing: 0; }
+
+.career-opening { min-height: 29rem; }
+.career-opening-shade { background: linear-gradient(90deg, hsl(var(--background) / 0.96) 0%, hsl(var(--background) / 0.85) 45%, hsl(var(--background) / 0.3) 100%); }
+@media (max-width: 640px) {
+  .career-opening-shade { background: hsl(var(--background) / 0.86); }
+}
+
+/* Firm career workspace: midnight navy, ivory text, restrained brass. Scoped to this mode. */
+.firm-theme {
+  --background: 220 12% 7%;
+  --foreground: 42 33% 91%;
+  --card: 220 12% 10%;
+  --card-foreground: 42 33% 91%;
+  --popover: 220 12% 10%;
+  --popover-foreground: 42 33% 91%;
+  --primary: 40 52% 58%;
+  --primary-foreground: 224 32% 8%;
+  --secondary: 220 12% 16%;
+  --secondary-foreground: 42 33% 91%;
+  --muted: 220 12% 14%;
+  --muted-foreground: 220 12% 66%;
+  --accent: 208 62% 60%;
+  --accent-foreground: 224 32% 8%;
+  --border: 220 10% 21%;
+  --input: 222 18% 22%;
+  --ring: 40 52% 58%;
+  --gain: 150 48% 50%;
+  --loss: 356 66% 60%;
+  --career-sidebar: 220 14% 9%;
+  --career-record: 220 12% 11%;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+.firm-scene { position: relative; isolation: isolate; }
+.career-sidebar { background: hsl(var(--career-sidebar)); }
+.career-section { border-top: 1px solid hsl(var(--border)); padding-block: 1.5rem; }
+.career-record, .career-stat { background: hsl(var(--career-record)); }
+.career-masthead { margin-bottom: 1.75rem; }
+.career-masthead-shade { background: linear-gradient(90deg, hsl(var(--background) / 0.98), hsl(var(--background) / 0.88) 55%, hsl(var(--background) / 0.62)); }
+.career-content > .fund-enter, .career-content > .space-y-5 { margin-top: 1.5rem; }
+.career-content h1 { letter-spacing: 0; }
+.career-nav-item[aria-current='page'] { border-left: 2px solid hsl(var(--primary)); }
+.career-content > [data-investment-desk] h1 { font-size: 1.25rem; }
+.career-newspaper > div:first-child { border-bottom: 3px double hsl(var(--border)); padding-bottom: 1rem; }
+@media (max-width: 640px) {
+  .career-masthead-shade { background: hsl(var(--background) / 0.92); }
+  .career-section { padding-block: 1.25rem; }
+}
+@media (max-height: 700px) {
+  .career-masthead-content { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+  .career-masthead-label { margin-top: 0.5rem; }
+  .career-masthead-metrics { margin-top: 0.5rem; padding-top: 0.5rem; }
+  .career-masthead-content > div:first-child svg { width: 32px; height: 32px; }
+  .career-masthead-content h1 { font-size: 1.5rem; }
+  .career-masthead { margin-bottom: 0.75rem; }
+}
+.firm-portrait {
+  --portrait-shirt: hsl(40 30% 90%);
+  --portrait-feature: hsl(24 30% 13%);
+  --portrait-cover: hsl(165 35% 32%);
+  --portrait-casual: hsl(15 38% 40%);
+  --portrait-uniform: hsl(210 30% 30%);
+  --portrait-jewelry: hsl(40 60% 70%);
+}
+.firm-logo { --logo-base: hsl(160 28% 24%); --logo-ink: hsl(42 42% 84%); }
+.firm-logo-technology { --logo-base: hsl(203 38% 27%); --logo-ink: hsl(156 42% 81%); }
+.firm-logo-hospitality { --logo-base: hsl(350 32% 30%); --logo-ink: hsl(40 45% 83%); }
+.firm-logo-marine { --logo-base: hsl(185 38% 25%); --logo-ink: hsl(38 50% 87%); }
+/* Office ambience deepens with the firm's office tier: a faint brass glow, never behind readable panels' own backgrounds. */
+.firm-scene::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(60rem 30rem at 85% -10%, hsl(var(--primary) / 0.05), transparent 70%); }
+.firm-scene[data-office='1']::before { background: radial-gradient(60rem 30rem at 85% -10%, hsl(var(--primary) / 0.08), transparent 70%); }
+.firm-scene[data-office='2']::before { background: radial-gradient(60rem 32rem at 85% -10%, hsl(var(--primary) / 0.11), transparent 70%), radial-gradient(40rem 20rem at 0% 100%, hsl(var(--accent) / 0.05), transparent 70%); }
+.firm-scene[data-office='3']::before { background: radial-gradient(64rem 34rem at 85% -10%, hsl(var(--primary) / 0.15), transparent 70%), radial-gradient(44rem 24rem at 0% 100%, hsl(var(--accent) / 0.08), transparent 70%); }
+
+.fund-enter { animation: fund-reveal 420ms ease-out both; }
+.fund-number { animation: fund-reveal 600ms ease-out both; }
+@keyframes fund-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fund-enter, .fund-number { animation: none; }
+}
+
+/* Teacher worksheet: print only the worksheet when requested. */
+@media print {
+  body.print-worksheet * { visibility: hidden; }
+  body.print-worksheet #worksheet, body.print-worksheet #worksheet * { visibility: visible; color: #000 !important; }
+  body.print-worksheet #worksheet { position: absolute; inset: 0 auto auto 0; width: 100%; border: none; }
+}

@@ -1,0 +1,82 @@
+name: Supabase Security Linter
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Start local Supabase
+        run: supabase db start
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+
+      - name: Run db lint (errors + warnings)
+        id: lint
+        run: |
+          supabase db lint --level warning | tee lint-output.txt
+          if grep -Ei "security[_ ]definer" lint-output.txt; then
+            echo "::error::SECURITY DEFINER lint warning detected — failing build."
+            exit 1
+          fi
+
+      - name: Scan migrations for unhardened SECURITY DEFINER
+        run: |
+          # A SECURITY DEFINER function is considered "hardened" only if the
+          # repo (across ALL migrations) contains BOTH:
+          #   1. A `SET search_path` clause on the function, AND
+          #   2. A `REVOKE ... EXECUTE` from PUBLIC or `authenticated`
+          #      (or an equivalent GRANT-only-to-anon hardening) for it.
+          set -u
+          fail=0
+          all_sql="$(mktemp)"
+          find supabase/migrations -type f -name '*.sql' -print0 \
+            | xargs -0 cat > "$all_sql"
+
+          # Extract every function declared SECURITY DEFINER, anywhere in history.
+          mapfile -t funcs < <(
+            grep -oEi 'create[[:space:]]+or[[:space:]]+replace[[:space:]]+function[[:space:]]+(public\.)?[a-zA-Z_][a-zA-Z0-9_]*' "$all_sql" \
+              | awk '{print tolower($NF)}' \
+              | sed 's/^public\.//' \
+              | sort -u
+          )
+
+          for fn in "${funcs[@]}"; do
+            # Only check functions that are actually SECURITY DEFINER in their latest definition.
+            if ! grep -izoE "create[[:space:]]+or[[:space:]]+replace[[:space:]]+function[[:space:]]+(public\.)?${fn}[^;]*security[[:space:]]+definer" "$all_sql" >/dev/null; then
+              continue
+            fi
+
+            missing=()
+
+            # Check #1: SET search_path on the function body, or pinned afterwards
+            # with ALTER FUNCTION ... SET search_path (equivalent hardening).
+            if ! grep -izoE "create[[:space:]]+or[[:space:]]+replace[[:space:]]+function[[:space:]]+(public\.)?${fn}[^;]*set[[:space:]]+search_path" "$all_sql" >/dev/null \
+               && ! grep -iqE "alter[[:space:]]+function[[:space:]]+(public\.)?${fn}\b[^;]*set[[:space:]]+search_path" "$all_sql"; then
+              missing+=("SET search_path")
+            fi
+
+            # Check #2: Permissions hardened — REVOKE ... ON FUNCTION fn ... FROM (public|authenticated)
+            # OR explicit GRANT EXECUTE ... TO anon paired with at least one REVOKE for that function.
+            if ! grep -iE "revoke[[:space:]]+(all[[:space:]]+privileges|all|execute)[[:space:]]+on[[:space:]]+function[[:space:]]+(public\.)?${fn}\b" "$all_sql" \
+                 | grep -iE "from[[:space:]]+(public|authenticated)" >/dev/null; then
+              missing+=("REVOKE EXECUTE ... FROM public/authenticated")
+            fi
+
+            if [ ${#missing[@]} -gt 0 ]; then
+              echo "::error::SECURITY DEFINER function '${fn}' is not hardened — missing: ${missing[*]}"
+              fail=1
+            fi
+          done
+          exit $fail

@@ -1,0 +1,142 @@
+// Historical average home prices by city, 1990-2020
+// Source: FHFA annual CBSA HPI anchored to Zillow city home values
+
+export interface CityData {
+  city: string;
+  prices: Record<number, number>;
+  growth: Record<number, number>;
+}
+
+export const CITIES: CityData[] = [
+  {
+    city: "New York",
+    prices: {1990:201819,1991:192712,1992:194093,1993:195420,1994:195691,1995:195885,1996:199552,1997:203926,1998:214099,1999:227909,2000:259633,2001:287453,2002:320945,2003:350571,2004:401366,2005:467643,2006:504845,2007:501697,2008:477631,2009:439697,2010:423707,2011:409780,2012:397893,2013:400499,2014:414019,2015:427267,2016:441456,2017:458357,2018:478721,2019:494494,2020:508546},
+    growth: {1990:-4.26,1991:-4.51,1992:0.72,1993:0.68,1994:0.14,1995:0.1,1996:1.87,1997:2.19,1998:4.99,1999:6.45,2000:13.92,2001:10.71,2002:11.65,2003:9.23,2004:14.49,2005:16.51,2006:7.96,2007:-0.62,2008:-4.8,2009:-7.94,2010:-3.64,2011:-3.29,2012:-2.9,2013:0.66,2014:3.38,2015:3.2,2016:3.32,2017:3.83,2018:4.44,2019:3.29,2020:2.84},
+  },
+  {
+    city: "Los Angeles",
+    prices: {1990:229603,1991:224742,1992:220198,1993:204790,1994:193835,1995:185592,1996:184021,1997:187063,1998:205679,1999:218892,2000:240658,2001:264354,2002:297828,2003:333745,2004:414488,2005:524290,2006:606087,2007:598724,2008:489526,2009:418738,2010:416547,2011:396906,2012:395637,2013:432021,2014:488302,2015:513785,2016:551376,2017:587078,2018:624430,2019:644339,2020:660541},
+    growth: {1990:4.26,1991:-2.12,1992:-2.02,1993:-7,1994:-5.35,1995:-4.25,1996:-0.85,1997:1.65,1998:9.95,1999:6.42,2000:9.94,2001:9.85,2002:12.66,2003:12.06,2004:24.19,2005:26.49,2006:15.6,2007:-1.21,2008:-18.24,2009:-14.46,2010:-0.52,2011:-4.72,2012:-0.32,2013:9.2,2014:13.03,2015:5.22,2016:7.32,2017:6.48,2018:6.36,2019:3.19,2020:2.51},
+  },
+  {
+    city: "Chicago",
+    prices: {1990:105855,1991:109543,1992:112668,1993:115939,1994:119679,1995:124641,1996:128073,1997:131899,1998:134983,1999:140241,2000:151547,2001:161050,2002:170782,2003:177849,2004:193112,2005:213086,2006:227112,2007:229634,2008:220255,2009:198006,2010:181874,2011:170220,2012:163928,2013:165862,2014:174803,2015:181102,2016:187270,2017:193352,2018:198996,2019:204632,2020:207146},
+    growth: {1990:5.04,1991:3.48,1992:2.85,1993:2.91,1994:3.22,1995:4.15,1996:2.75,1997:2.99,1998:2.34,1999:3.89,2000:8.06,2001:6.27,2002:6.04,2003:4.14,2004:8.58,2005:10.34,2006:6.58,2007:1.11,2008:-4.09,2009:-10.1,2010:-8.15,2011:-6.41,2012:-3.7,2013:1.18,2014:5.39,2015:3.6,2016:3.41,2017:3.25,2018:2.92,2019:2.83,2020:1.23},
+  },
+  {
+    city: "Boston",
+    prices: {1990:191228,1991:178888,1992:176468,1993:175867,1994:177190,1995:181901,1996:188830,1997:198359,1998:212177,1999:231875,2000:273262,2001:305202,2002:337837,2003:361954,2004:397328,2005:434309,2006:435886,2007:421367,2008:402907,2009:379112,2010:371470,2011:364004,2012:360819,2013:369536,2014:392088,2015:407716,2016:429684,2017:456195,2018:481115,2019:501815,2020:516614},
+    growth: {1990:-4.6,1991:-6.45,1992:-1.35,1993:-0.34,1994:0.75,1995:2.66,1996:3.81,1997:5.05,1998:6.97,1999:9.28,2000:17.85,2001:11.69,2002:10.69,2003:7.14,2004:9.77,2005:9.31,2006:0.36,2007:-3.33,2008:-4.38,2009:-5.91,2010:-2.02,2011:-2.01,2012:-0.87,2013:2.42,2014:6.1,2015:3.99,2016:5.39,2017:6.17,2018:5.46,2019:4.3,2020:2.95},
+  },
+  {
+    city: "Miami",
+    prices: {1990:96775,1991:97821,1992:99841,1993:102702,1994:105212,1995:108535,1996:111211,1997:113364,1998:117676,1999:121017,2000:131242,2001:146353,2002:164739,2003:183758,2004:217992,2005:279705,2006:332026,2007:328856,2008:268982,2009:202358,2010:190921,2011:179213,2012:179513,2013:198745,2014:226130,2015:247102,2016:269471,2017:290862,2018:312628,2019:327168,2020:341890},
+    growth: {1990:1.65,1991:1.08,1992:2.06,1993:2.87,1994:2.44,1995:3.16,1996:2.46,1997:1.94,1998:3.8,1999:2.84,2000:8.45,2001:11.51,2002:12.56,2003:11.54,2004:18.63,2005:28.31,2006:18.71,2007:-0.96,2008:-18.21,2009:-24.77,2010:-5.65,2011:-6.13,2012:0.17,2013:10.71,2014:13.78,2015:9.28,2016:9.05,2017:7.94,2018:7.48,2019:4.65,2020:4.5},
+  },
+  {
+    city: "Phoenix",
+    prices: {1990:78269,1991:79081,1992:80842,1993:82016,1994:85365,1995:91238,1996:95715,1997:100568,1998:105714,1999:111078,2000:119970,2001:127452,2002:133419,2003:138133,2004:153294,2005:208176,2006:249103,2007:244717,2008:208513,2009:160720,2010:139278,2011:124103,2012:134989,2013:156953,2014:176105,2015:186667,2016:201871,2017:217534,2018:235125,2019:251579,2020:269651},
+    growth: {1990:-2.4,1991:1.04,1992:2.23,1993:1.45,1994:4.08,1995:6.88,1996:4.91,1997:5.07,1998:5.12,1999:5.07,2000:8.01,2001:6.24,2002:4.68,2003:3.53,2004:10.98,2005:35.8,2006:19.66,2007:-1.76,2008:-14.79,2009:-22.92,2010:-13.34,2011:-10.9,2012:8.77,2013:16.27,2014:12.2,2015:6,2016:8.14,2017:7.76,2018:8.09,2019:7,2020:7.18},
+  },
+  {
+    city: "San Diego",
+    prices: {1990:215618,1991:214169,1992:211096,1993:202415,1994:197199,1995:193957,1996:193404,1997:198228,1998:217298,1999:234249,2000:274367,2001:307692,2002:353469,2003:396844,2004:488455,2005:589130,2006:607931,2007:571499,2008:475172,2009:419360,2010:416976,2011:397042,2012:399100,2013:440223,2014:493072,2015:514526,2016:552694,2017:591844,2018:627411,2019:645419,2020:667217},
+    growth: {1990:6.02,1991:-0.67,1992:-1.44,1993:-4.11,1994:-2.58,1995:-1.64,1996:-0.29,1997:2.5,1998:9.62,1999:7.8,2000:17.13,2001:12.15,2002:14.88,2003:12.27,2004:23.08,2005:20.61,2006:3.19,2007:-5.99,2008:-16.86,2009:-11.75,2010:-0.57,2011:-4.78,2012:0.52,2013:10.3,2014:12,2015:4.35,2016:7.42,2017:7.08,2018:6.01,2019:2.87,2020:3.38},
+  },
+  {
+    city: "San Francisco",
+    prices: {1990:302954,1991:295732,1992:292184,1993:283758,1994:279010,1995:275582,1996:276476,1997:290314,1998:320548,1999:349669,2000:432542,2001:496137,2002:529423,2003:561111,2004:634768,2005:792109,2006:851774,2007:814984,2008:686753,2009:601607,2010:585474,2011:554004,2012:560844,2013:628701,2014:724742,2015:785361,2016:868109,2017:921109,2018:991795,2019:1004985,2020:1001834},
+    growth: {1990:5.91,1991:-2.38,1992:-1.2,1993:-2.88,1994:-1.67,1995:-1.23,1996:0.33,1997:5.01,1998:10.41,1999:9.08,2000:23.7,2001:14.7,2002:6.71,2003:5.99,2004:13.13,2005:24.79,2006:7.53,2007:-4.32,2008:-15.73,2009:-12.4,2010:-2.68,2011:-5.38,2012:1.23,2013:12.1,2014:15.28,2015:8.36,2016:10.54,2017:6.11,2018:7.67,2019:1.33,2020:-0.31},
+  },
+  {
+    city: "Seattle",
+    prices: {1990:161761,1991:168715,1992:171503,1993:174327,1994:178705,1995:184434,1996:189099,1997:200068,1998:215581,1999:229780,2000:250921,2001:265826,2002:276759,2003:284663,2004:310079,2005:361902,2006:420881,2007:453064,2008:439098,2009:388046,2010:355289,2011:330266,2012:323176,2013:344744,2014:380305,2015:410785,2016:461682,2017:516166,2018:565336,2019:586372,2020:613324},
+    growth: {1990:22.51,1991:4.3,1992:1.65,1993:1.65,1994:2.51,1995:3.21,1996:2.53,1997:5.8,1998:7.75,1999:6.59,2000:9.2,2001:5.94,2002:4.11,2003:2.86,2004:8.93,2005:16.71,2006:16.3,2007:7.65,2008:-3.08,2009:-11.63,2010:-8.44,2011:-7.04,2012:-2.15,2013:6.67,2014:10.32,2015:8.01,2016:12.39,2017:11.8,2018:9.53,2019:3.72,2020:4.6},
+  },
+  {
+    city: "Washington DC",
+    prices: {1990:169865,1991:168861,1992:169446,1993:168775,1994:168255,1995:167312,1996:168795,1997:169173,1998:173018,1999:179461,2000:197307,2001:220637,2002:246263,2003:266111,2004:314568,2005:394886,2006:439710,2007:432212,2008:383201,2009:343836,2010:336732,2011:332030,2012:333019,2013:344719,2014:363473,2015:374457,2016:385819,2017:398645,2018:411506,2019:425694,2020:436723},
+    growth: {1990:1.87,1991:-0.59,1992:0.35,1993:-0.39,1994:-0.31,1995:-0.56,1996:0.89,1997:0.22,1998:2.27,1999:3.72,2000:9.94,2001:11.82,2002:11.62,2003:8.06,2004:18.21,2005:25.53,2006:11.35,2007:-1.7,2008:-11.34,2009:-10.27,2010:-2.07,2011:-1.4,2012:0.3,2013:3.51,2014:5.44,2015:3.02,2016:3.03,2017:3.32,2018:3.23,2019:3.45,2020:2.59},
+  },
+];
+
+export const ALL_CITY_NAMES = CITIES.map((c) => c.city);
+export const START_YEAR = 1990;
+export const END_YEAR = 2020;
+
+export interface GameConfig {
+  years: number;
+  totalSeconds: number;
+  label: string;
+}
+
+export const SECONDS_PER_YEAR = 60;
+
+export const GAME_CONFIGS: GameConfig[] = [
+  { years: 10, totalSeconds: 10 * SECONDS_PER_YEAR, label: "10 Years" },
+  { years: 15, totalSeconds: 15 * SECONDS_PER_YEAR, label: "15 Years" },
+  { years: 20, totalSeconds: 20 * SECONDS_PER_YEAR, label: "20 Years" },
+  { years: 30, totalSeconds: 30 * SECONDS_PER_YEAR, label: "Full Era" },
+];
+
+export function getCashInjection(yearIndex: number): number {
+  if (yearIndex === 0) return 500000;
+  return 100000 + (yearIndex - 1) * 25000;
+}
+
+export const MARKET_NEWS: Record<number, string[]> = {
+  1990: ["Recession hits — housing starts fall sharply", "S&L crisis fallout continues to drag real estate"],
+  1991: ["Gulf War uncertainty weighs on housing", "Northeast home prices keep sliding"],
+  1992: ["Economy slowly recovers; mortgage rates drop below 9%", "West Coast markets still correcting"],
+  1993: ["30-year mortgage dips to 7.3%", "California housing bottom nears"],
+  1994: ["Fed hikes rates 6 times — mortgage rates spike", "Midwest housing remains resilient"],
+  1995: ["Rates ease back; affordability improves", "Tech sector growth fuels Pacific NW demand"],
+  1996: ["Homeownership rate hits new highs", "Housing starts climb above 1.4 million"],
+  1997: ["Asian financial crisis has little impact on U.S. housing", "Dot-com boom drives San Francisco prices up"],
+  1998: ["Russian debt crisis; Fed cuts rates", "Refinancing boom begins as rates fall"],
+  1999: ["Y2K fears have no effect on housing", "Coastal cities see accelerating appreciation"],
+  2000: ["Dot-com bubble bursts — stock investors pivot to real estate", "Mortgage rates hover near 8%"],
+  2001: ["9/11 attacks shake economy; Fed slashes rates to 1.75%", "Housing becomes a safe haven asset"],
+  2002: ["Rates hit 40-year lows — housing boom ignites", "Subprime lending begins expanding rapidly"],
+  2003: ["Iraq War begins; rates stay ultra-low", "Home prices up double digits in many markets"],
+  2004: ["Fed begins tightening cycle", "Speculation and flipping surge in Sun Belt cities"],
+  2005: ["Housing boom peaks — Miami, Phoenix, LA post 20%+ gains", "Economists warn of 'housing bubble'"],
+  2006: ["Market shows first cracks — inventory rising", "Subprime delinquencies start climbing"],
+  2007: ["Subprime mortgage crisis begins", "Bear Stearns hedge funds collapse; credit tightens"],
+  2008: ["HOUSING MARKET CRASHES — Lehman Brothers fails", "Government bails out Fannie Mae & Freddie Mac", "Home prices in freefall across the nation"],
+  2009: ["Great Recession in full swing — record foreclosures", "Obama signs $8,000 first-time buyer tax credit", "Phoenix and Miami prices down 40%+ from peak"],
+  2010: ["Recovery stalls — 'double dip' fears grow", "Shadow inventory keeps pressure on prices"],
+  2011: ["Housing hits rock bottom in many markets", "Mortgage rates fall below 4% for first time ever"],
+  2012: ["Investors flood into housing — bulk REO purchases begin", "Prices finally stabilize in most markets"],
+  2013: ["Housing recovery takes hold — prices jump 10%+ in many cities", "Fed announces 'taper' — rates briefly spike"],
+  2014: ["Recovery broadens — inventory remains tight", "Foreign buyers pour into Miami and NYC luxury markets"],
+  2015: ["Steady gains continue; affordability concerns emerge", "San Francisco median tops $750K"],
+  2016: ["Election uncertainty briefly pauses activity", "Millennial homebuying demand surges"],
+  2017: ["Tax reform caps state and local tax deductions", "Seattle and San Francisco lead in appreciation"],
+  2018: ["Rising rates slow the market in late 2018", "Inventory crunch pushes bidding wars in hot markets"],
+  2019: ["Fed reverses course — cuts rates three times", "Housing demand rebounds; prices re-accelerate"],
+  2020: ["COVID-19 pandemic — brief freeze then explosive demand", "Work-from-home drives suburban and Sun Belt migration", "Mortgage rates hit historic low of 2.65%"],
+};
+
+export interface LeaderboardEntry {
+  name: string;
+  netWorth: number;
+  config: string;
+  date: string;
+}
+
+export function getLeaderboard(): LeaderboardEntry[] {
+  try {
+    const raw = localStorage.getItem("re-game-leaderboard");
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+export function addToLeaderboard(entry: LeaderboardEntry) {
+  const board = getLeaderboard();
+  board.push(entry);
+  board.sort((a, b) => b.netWorth - a.netWorth);
+  localStorage.setItem("re-game-leaderboard", JSON.stringify(board.slice(0, 50)));
+}
