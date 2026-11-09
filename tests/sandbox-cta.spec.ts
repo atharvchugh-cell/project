@@ -13,18 +13,26 @@ import { test, expect } from "../playwright-fixture";
 
 const SETUP = "/sandbox/setup";
 
+// CTA analytics only fire after the visitor accepts optional analytics in the
+// privacy banner (see analyticsAllowed in src/lib/privacy.ts), so record that
+// choice before each page loads.
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("rise-to-riches:privacy:v1", "accepted");
+  });
+});
+
 // Every CTA source we ship, paired with the page it lives on. Add new
 // entries here whenever a new Sandbox CTA is added — the test loop enforces
-// route + analytics on all of them.
+// route + analytics on all of them. (The landing footer and landing teaser
+// CTAs were removed from the homepage; example cards carry scenario query
+// params and are covered by their own test below.)
 const CTAS: { from: string; source: string }[] = [
   { from: "/", source: "landing-nav-desktop" },
-  { from: "/", source: "landing-footer" },
   { from: "/", source: "landing-teaser-primary" },
-  { from: "/", source: "landing-teaser-secondary" },
   { from: "/sandbox", source: "sandbox-page-nav" },
   { from: "/sandbox", source: "sandbox-page-teaser-primary" },
   { from: "/sandbox", source: "sandbox-page-teaser-secondary" },
-  { from: "/sandbox", source: "sandbox-page-example-card" },
   { from: "/sandbox", source: "sandbox-page-custom-event" },
 ];
 
@@ -58,6 +66,36 @@ for (const { from, source } of CTAS) {
     expect(events[0].target).toBe(SETUP);
   });
 }
+
+test("sandbox example card opens setup with its scenario and fires analytics", async ({ page }) => {
+  await page.goto("/sandbox");
+  await page.waitForLoadState("domcontentloaded");
+
+  await page.evaluate(() => {
+    (window as unknown as { __sbEvents: unknown[] }).__sbEvents = [];
+    window.addEventListener("sandbox:cta-click", (e) => {
+      (window as unknown as { __sbEvents: unknown[] }).__sbEvents.push(
+        (e as CustomEvent).detail,
+      );
+    });
+  });
+
+  const card = page.getByTestId("sandbox-cta-sandbox-page-example-card").first();
+  await expect(card, "missing example card CTA").toBeVisible();
+  const title = (await card.getAttribute("aria-label"))?.replace(/^Try scenario: /, "");
+  await card.click();
+
+  await page.waitForURL(`**${SETUP}?scenario=*`);
+  expect(new URL(page.url()).pathname).toBe(SETUP);
+  expect(new URL(page.url()).searchParams.get("scenario")).toBeTruthy();
+
+  const events = await page.evaluate(
+    () => (window as unknown as { __sbEvents: { source: string; label?: string }[] }).__sbEvents,
+  );
+  expect(events.length, "no analytics event for example card").toBeGreaterThan(0);
+  expect(events[0].source).toBe("sandbox-page-example-card");
+  expect(events[0].label).toBe(title);
+});
 
 test("sandbox CTA restarts setup when already inside /sandbox/setup", async ({ page }) => {
   await page.goto(SETUP);

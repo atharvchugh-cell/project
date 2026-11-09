@@ -12,6 +12,7 @@
 import { describe, it, expect } from 'vitest';
 import { runFullEraIntegrityAudit } from './simulationAudit';
 import { COMPLEX_TICKER_INDEX } from '@/data/complexReturns';
+import { CANONICAL_STOCK_POOL } from '@/data/stockPool';
 
 describe('Full-era simulation integrity (Complex + Normal)', () => {
   const report = runFullEraIntegrityAudit({ startYear: 1990, duration: 35 });
@@ -75,7 +76,15 @@ describe('Deterministic seed support', () => {
 
 describe('Canonical uploaded stock source', () => {
   it('uses +5% for N/A years from the uploaded file', () => {
-    expect(COMPLEX_TICKER_INDEX['CDNS']?.returns[1993]).toBe(5);
+    const cdns = CANONICAL_STOCK_POOL.find(s => s.ticker === 'CDNS');
+    expect(cdns?.annualReturns[1993]).toBe(0.05);
+  });
+
+  it('preserves the owner-confirmed CDNS 1993 complex-universe baseline', () => {
+    // Owner-confirmed baseline mismatch at 27ed47cd (see fund/annualParity.test.ts):
+    // the shipped complex universe and the server-side audit copy both hold 0 for
+    // this N/A cell. Preserve both inputs; never rewrite data to mask it.
+    expect(COMPLEX_TICKER_INDEX['CDNS']?.returns[1993]).toBe(0);
   });
 
   it('treats null years as pre-IPO gaps, not 0% returns', () => {
