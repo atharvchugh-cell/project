@@ -1,0 +1,1 @@
+ALTER TABLE public.feature_requests ADD COLUMN IF NOT EXISTS admin_reply text, ADD COLUMN IF NOT EXISTS replied_at timestamptz;

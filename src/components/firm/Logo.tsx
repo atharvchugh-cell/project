@@ -1,0 +1,12 @@
+import { Landmark, FlaskConical, Anchor, Hotel, Cpu, ShieldCheck, Building2, Utensils, Heart, BookOpen, Mic, Palmtree, GraduationCap, Handshake, Dumbbell, Coffee, Palette } from 'lucide-react';
+import { logoTraits } from '@/lib/firm/brand';
+
+export function Logo({ id, name, industry = 'manager', stage = 0, variant = 0, size = 40 }: { id: string; name: string; industry?: string; stage?: number; variant?: number; size?: number }) {
+  const t = logoTraits(id, industry, stage, variant);
+  const Icon = /network|host|dinner|restaurant/i.test(industry) ? Utensils : /family|philanthropy|therapy/i.test(industry) ? Heart : /study|education/i.test(industry) ? BookOpen : /interview|media/i.test(industry) ? Mic : /leave|vacation/i.test(industry) ? Palmtree : /mentor/i.test(industry) ? GraduationCap : /allocation|lockup|promise|mandate/i.test(industry) ? Handshake : /gym/i.test(industry) ? Dumbbell : /coffee/i.test(industry) ? Coffee : /fashion|art/i.test(industry) ? Palette : /research|review/i.test(industry) ? FlaskConical : /fintech|software/.test(industry) ? Cpu : /marina/.test(industry) ? Anchor : /hospital/.test(industry) ? Hotel : /admin/.test(industry) ? ShieldCheck : /manager|adviser|finance/.test(industry) ? Landmark : Building2;
+  const initials = name.trim().split(/\s+/).map(x => x[0]).join('').slice(0, 2).toUpperCase();
+  return <svg width={size} height={size} viewBox="0 0 64 64" role="img" aria-label={`${name} logo`} className={`firm-logo firm-logo-${t.palette} shrink-0`} data-stage={t.stage}>
+    {t.shape === 0 ? <circle cx="32" cy="32" r="30" className="fill-[var(--logo-base)]" /> : t.shape === 2 ? <path d="M6 5h52v30c0 14-14 22-26 27C20 57 6 49 6 35z" className="fill-[var(--logo-base)]" /> : t.shape === 3 ? <path d="M16 3h32l15 29-15 29H16L1 32z" className="fill-[var(--logo-base)]" /> : <rect x="2" y="2" width="60" height="60" rx={t.shape === 4 ? 2 : 8} className="fill-[var(--logo-base)]" />}
+    {t.shape === 4 || t.mark === 2 || t.stage >= 4 ? <text x="32" y="39" textAnchor="middle" fontSize={t.stage >= 4 ? 25 : 22} fontWeight="700" className="fill-[var(--logo-ink)]">{initials}</text> : <><Icon x="16" y="10" width="32" height="30" strokeWidth={t.stage >= 2 ? 2.4 : 1.7} className="stroke-[var(--logo-ink)]" /><text x="32" y="54" textAnchor="middle" fontSize="12" fontWeight="600" className="fill-[var(--logo-ink)]">{initials}</text></>}
+  </svg>;
+}

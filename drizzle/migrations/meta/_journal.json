@@ -1,0 +1,90 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791579931519,
+      "tag": "0000_trim_unused_game_event_indexes",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791580330555,
+      "tag": "0001_pending_runs_backlog",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791840328018,
+      "tag": "0002_migration",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1792011194001,
+      "tag": "0003_classroom_rooms",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1792431269612,
+      "tag": "0004_social_friends_private_foundation",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1792431409684,
+      "tag": "0005_social_verified_matches",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792431436049,
+      "tag": "0006_social_match_atomic_entry",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1792431543204,
+      "tag": "0007_social_presence_and_private_statistics",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1792602754417,
+      "tag": "0008_social_foundation_safety_and_exports",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1792637484700,
+      "tag": "0009_social_explicit_private_grants",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1792896995906,
+      "tag": "0010_username_search_exact_match",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1792897031767,
+      "tag": "0011_friend_request_via_username_search",
+      "breakpoints": true
+    }
+  ]
+}
