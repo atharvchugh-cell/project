@@ -3,6 +3,11 @@ import { resolve, join } from "path";
 import { JSDOM } from "jsdom";
 import { BASE_URL, SEO_ROUTES, NOINDEX_ROUTES, PUBLIC_ROBOTS } from "./seo-routes";
 
+// Optional sub-path deployment (e.g. GitHub Pages): links are rendered as
+// `${BASE}/learn`, so strip the prefix before resolving them. Default "/" is a no-op.
+const BASE = (process.env.BASE_PATH ?? "/").replace(/\/+$/, "");
+const stripBase = (p: string) => (BASE && (p === BASE || p.startsWith(`${BASE}/`)) ? p.slice(BASE.length) || "/" : p);
+
 export function validatePrerender(dist: string) {
   let checked = 0;
   const publicPaths = new Set(SEO_ROUTES.map(r => r.path));
@@ -32,7 +37,7 @@ export function validatePrerender(dist: string) {
     for (const a of root?.querySelectorAll("a[href]") ?? []) {
       const href = a.getAttribute("href") ?? "";
       if (!href.startsWith("/") || href.startsWith("//")) continue;
-      const path = new URL(href, BASE_URL).pathname.replace(/\/$/, "") || "/";
+      const path = stripBase(new URL(href, BASE_URL).pathname).replace(/\/$/, "") || "/";
       require(publicPaths.has(path) || privatePaths.has(path) || /^\/(c|r)\//.test(path) || existsSync(join(dist, path)), `${route.path}: unresolved internal link ${href}`);
     }
     checked++;
@@ -46,7 +51,7 @@ export function validatePrerender(dist: string) {
   const missing = new JSDOM(readFileSync(join(dist, "404.html"), "utf8")).window.document;
   require(missing.querySelector('meta[name="robots"]')?.getAttribute("content") === "noindex,follow", "404 robots");
   require(!missing.querySelector('link[rel="canonical"],script[type="application/ld+json"]'), "404 canonical/schema leakage");
-  require(missing.querySelector('#root a[href="/"]') && missing.querySelector('#root a[href="/learn"]'), "404 shared navigation missing");
+  require(missing.querySelector(`#root a[href="${BASE || "/"}"]`) && missing.querySelector(`#root a[href="${BASE}/learn"]`), "404 shared navigation missing");
   const sitemap = new JSDOM(readFileSync(resolve("public/sitemap.xml"), "utf8"), { contentType: "text/xml" }).window.document;
   const locs = [...sitemap.querySelectorAll("loc")].map(n => n.textContent);
   require(locs.length === 19 && new Set(locs).size === 19, "sitemap count/duplicates");
