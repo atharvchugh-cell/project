@@ -60,8 +60,10 @@ jobs:
 
             missing=()
 
-            # Check #1: SET search_path on the function body.
-            if ! grep -izoE "create[[:space:]]+or[[:space:]]+replace[[:space:]]+function[[:space:]]+(public\.)?${fn}[^;]*set[[:space:]]+search_path" "$all_sql" >/dev/null; then
+            # Check #1: SET search_path on the function body, or pinned afterwards
+            # with ALTER FUNCTION ... SET search_path (equivalent hardening).
+            if ! grep -izoE "create[[:space:]]+or[[:space:]]+replace[[:space:]]+function[[:space:]]+(public\.)?${fn}[^;]*set[[:space:]]+search_path" "$all_sql" >/dev/null \
+               && ! grep -iqE "alter[[:space:]]+function[[:space:]]+(public\.)?${fn}\b[^;]*set[[:space:]]+search_path" "$all_sql"; then
               missing+=("SET search_path")
             fi
 
