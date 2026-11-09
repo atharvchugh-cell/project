@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/project/favicon.ico" sizes="any" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Security headers (meta-injectable subset). X-Frame-Options / HSTS / true CSP
+         must additionally be set at the hosting layer; these provide defense-in-depth. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.lovable.app https://*.lovable.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.lovable.app https://*.lovable.dev; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+
+    <!-- Faster paint: preconnect to font origins so DNS+TLS happens during parse. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://tmoowkcxngosiyidozrd.supabase.co" />
+
+    <meta name="google-site-verification" content="L5-GsAsOAqkdOOZB_Vqul3tMAmh0panXDVGOLtaRMzw" />
+    <meta name="author" content="Rise to Riches" />
+    
+    <!-- Non-blocking font load: print media swap then onload to async-apply, with noscript fallback. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" /></noscript>
+
+
+    <meta property="og:site_name" content="Rise to Riches" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Sitewide identity only. Page-specific schema is added per route. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://investmentsimulator.app/#organization",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "url": "https://investmentsimulator.app/",
+          "email": "contact@investmentsimulator.app",
+          "founder": { "@type": "Person", "name": "Atharv Chugh" },
+          "description": "Rise to Riches is a free investment simulator and stock market game. Players invest virtual money using real historical annual returns, solo or with a class. No account required."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://investmentsimulator.app/#website",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "description": "Free investment simulator and stock market game built on real historical annual returns.",
+          "url": "https://investmentsimulator.app/",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://investmentsimulator.app/#organization" }
+        }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/project/assets/index-C9vb9qYw.js"></script>
+    <link rel="stylesheet" crossorigin href="/project/assets/index-BtBuqOz1.css">
+      <title>Stock Market Game for High School Students — Free, One Class Period</title>
+    <meta name="description" content="Free stock market game for high school students. Use a one-period lesson plan, discussion questions and teacher guidance. Play with virtual money." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://investmentsimulator.app/learn/stock-market-game-high-school" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Stock Market Game for High School Students — Free, One Class Period" />
+    <meta property="og:description" content="Free stock market game for high school students. Use a one-period lesson plan, discussion questions and teacher guidance. Play with virtual money." />
+    <meta property="og:url" content="https://investmentsimulator.app/learn/stock-market-game-high-school" />
+    <meta property="og:image" content="https://investmentsimulator.app/__l5e/assets-v1/c43fbe83-25b5-4f97-a394-083fb6596f77/og-home.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Stock Market Game for High School Students — Free, One Class Period" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stock Market Game for High School Students — Free, One Class Period" />
+    <meta name="twitter:description" content="Free stock market game for high school students. Use a one-period lesson plan, discussion questions and teacher guidance. Play with virtual money." />
+    <meta name="twitter:image" content="https://investmentsimulator.app/__l5e/assets-v1/c43fbe83-25b5-4f97-a394-083fb6596f77/og-home.jpg" />
+    <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Stock Market Game for High School Students","description":"How to run a free online stock market simulation with a high school class in one period.","author":{"@type":"Organization","name":"Rise to Riches"},"publisher":{"@type":"Organization","name":"Rise to Riches"},"dateModified":"2026-08-14","mainEntityOfPage":"https://investmentsimulator.app/learn/stock-market-game-high-school"}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://investmentsimulator.app/"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://investmentsimulator.app/learn"},{"@type":"ListItem","position":3,"name":"Stock Market Game for High School Students","item":"https://investmentsimulator.app/learn/stock-market-game-high-school"}]}</script>
+  </head>
+
+  <body>
+    <style>
+      /* Pre-mount skeleton. React replaces #root's children on first render, so
+         this is visible only while the bundle boots — it prevents the brief flash
+         of unstyled text that appeared before hydration. */
+      #app-skeleton{min-height:100vh;background:hsl(222 24% 6%);padding:64px 24px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+      #app-skeleton .sk-wrap{max-width:1152px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+      #app-skeleton .sk{background:hsl(220 18% 14%);border-radius:10px;animation:sk-pulse 1.4s ease-in-out infinite}
+      #app-skeleton .sk-title{height:56px;width:min(520px,80%)}
+      #app-skeleton .sk-sub{height:20px;width:min(680px,95%)}
+      #app-skeleton .sk-row{display:flex;gap:16px;flex-wrap:wrap}
+      #app-skeleton .sk-btn{height:64px;width:220px;border-radius:12px}
+      #app-skeleton .sk-card{height:220px;border-radius:16px;flex:1 1 260px}
+      @keyframes sk-pulse{0%,100%{opacity:.55}50%{opacity:.9}}
+      @media (prefers-reduced-motion: reduce){#app-skeleton .sk{animation:none}}
+    </style>
+    <div id="root"><main><article class="min-h-screen bg-background text-foreground"><div class="mx-auto max-w-3xl px-6 py-16"><nav class="mb-8 text-sm text-muted-foreground" aria-label="Breadcrumb"><a class="hover:text-foreground" href="/project">Home</a><span class="mx-2">/</span><a class="hover:text-foreground" href="/project/learn">Learn</a><span class="mx-2">/</span><span class="text-foreground">Stock market game for high school</span></nav><header class="mb-12"><p class="mb-3 text-[10px] font-mono uppercase tracking-[0.3em] text-primary">Classroom lesson</p><h1 class="mb-4 text-4xl md:text-6xl font-editorial font-semibold font-normal leading-[1.05] tracking-tight">A stock market game for high school students</h1><p class="text-lg text-muted-foreground">Most classroom stock games run for a semester, require accounts, and quietly reward whoever gambled hardest in week three. This one runs thirty years of real market history inside one period, gives every student the identical market, and ends with a comparison against the S&amp;P 500.</p><p class="mt-4 text-sm text-muted-foreground">Published by Rise to Riches · Last updated<!-- --> <time dateTime="2026-08-14">14 August 2026</time></p></header><section class="mb-12 space-y-4"><h2 class="flex items-center gap-2 text-2xl font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target h-6 w-6 text-primary" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> What students actually do</h2><p>Each student starts with cash and receives another deposit every simulated quarter. They allocate it across individual company stocks, an S&amp;P 500 index fund, gold, crude oil, certificates of deposit, and a high-yield savings account. One simulated year passes roughly every minute, and prices update every ten seconds, so the room is making decisions continuously rather than filling in a worksheet.</p><p>Because deposits arrive over time, a student cannot make one allocation and coast. They have to keep deciding whether to add to a winner, rebalance into something safer, or lock money into a CD they cannot touch — which is the actual skill the lesson is about.</p></section><section class="mb-12 space-y-4"><h2 class="flex items-center gap-2 text-2xl font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-6 w-6 text-primary" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> A 45-minute plan, minute by minute</h2><ol class="list-decimal space-y-3 pl-6"><li><strong>0–4 min — Pose the question.</strong> Write on the board: &quot;Can you beat the index by picking stocks?&quot; Ask for a show of hands. Record the count; you will come back to it.</li><li><strong>4–8 min — Host and join.</strong> Start a classroom game and put the join code on the screen. Students open the link and enter the code. The built-in tutorial covers the interface.</li><li><strong>8–28 min — Play a 20-year run.</strong> Circulate. When a student asks &quot;should I buy this?&quot;, hand it back: &quot;what happens to your portfolio if it drops 40% next year?&quot;</li><li><strong>28–38 min — Read the results together.</strong> The end screen shows each portfolio against the S&amp;P 500 over the same years. Ask the top and bottom finishers to describe their allocation before anyone sees the numbers explained.</li><li><strong>38–45 min — Debrief.</strong> Return to the opening question and re-take the show of hands. The change in the room is the lesson.</li></ol><p class="text-sm text-muted-foreground">Shorter period? Run a 10-year game instead — roughly ten minutes of play, same structure. Longer block? The 35-year run spans multiple crashes and recoveries.</p></section><section class="mb-12 space-y-4"><h2 class="flex items-center gap-2 text-2xl font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-6 w-6 text-primary" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Four things students reliably get wrong</h2><ul class="space-y-3"><li><strong>Everything in one stock.</strong> Someone always puts the whole balance into the company with the best-looking recent line. Sometimes it wins spectacularly, which is a better teaching moment than when it loses — ask the winner whether they would take that bet again with their own tuition money.</li><li><strong>Selling during the crash.</strong> When 2008 arrives, a chunk of the room sells into it and holds cash through the recovery. Their final number is usually below the students who did nothing at all.</li><li><strong>Ignoring the boring assets.</strong> CDs and the savings account look pointless until a student notices that deposit rates were above 5% in the early 1990s and near zero after 2010. That contrast is a whole macro lesson in one screen.</li><li><strong>Confusing activity with skill.</strong> The most-active traders rarely finish top three. Pull up the trade counts against final values and let the class find that themselves.</li></ul></section><section class="mb-12 space-y-4"><h2 class="flex items-center gap-2 text-2xl font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square h-6 w-6 text-primary" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg> Five discussion questions</h2><ol class="list-decimal space-y-2 pl-6"><li>Who beat the S&amp;P 500, and can they explain why in terms of decisions rather than luck?</li><li>If we replayed the same twenty years, would your strategy survive a different order of events?</li><li>What did holding cash during a downturn cost you, in dollars, on your own screen?</li><li>Which asset felt safe and turned out not to be — and how would you have known in advance?</li><li>How would your choices change if this were money you needed for college in three years?</li></ol></section><section class="mb-12 space-y-4"><h2 class="text-2xl font-semibold">Why real historical data matters here</h2><p>Games built on random price generators teach students that markets are noise. This simulation uses actual annual returns from 1990 to 2025, so the dot-com unwind, 2008, and the 2020 recovery land on the years they really happened. A student who lived through a simulated 2008 has a reference point that a random walk cannot give them. The exact sources and the modelling simplifications are documented on the<!-- --> <a class="text-primary underline underline-offset-4" href="/project/methodology">methodology page</a>.</p><p class="text-sm text-muted-foreground">This is an educational simulation using virtual money. It is not financial advice.</p></section><div class="rounded-2xl border border-border/50 bg-card/40 p-8"><h2 class="mb-3 text-2xl font-semibold">Run it with your class</h2><p class="mb-6 text-muted-foreground">Free, no accounts, no downloads, works on school Chromebooks.</p><a class="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all" href="/project/for-teachers">Open the teacher guide <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><div class="mt-6 flex flex-wrap gap-4 text-sm"><a class="text-primary underline underline-offset-4" href="/project">Play the stock simulator</a><a class="text-primary underline underline-offset-4" href="/project/learn/how-diversification-works">How diversification works</a><a class="text-primary underline underline-offset-4" href="/project/guide">Beginner&#x27;s investing guide</a><a class="text-primary underline underline-offset-4" href="/project/learn/stock-market-crashes">Stock market crashes explained</a></div></div></div></article></main><nav aria-label="Legal and privacy" class="border-t border-border bg-background px-4 py-5 flex flex-wrap justify-center gap-5 text-xs text-muted-foreground"><a href="/project/privacy">Privacy</a><a href="/project/terms">Terms</a><a href="/project/cookies">Cookies &amp; storage</a><a href="/project/contact">Contact</a><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary underline-offset-4 hover:underline h-auto p-0 text-xs">Privacy settings</button></nav><aside aria-label="Optional analytics choices" class="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-2xl rounded-lg border border-border bg-card p-4 shadow-lg"><p class="text-sm font-semibold">Your privacy choices</p><p class="mt-1 text-xs text-muted-foreground">Necessary storage supports sign-in, requested saves, rooms and abuse protection. Optional game and tutorial analytics stay off unless you accept. Rejecting does not stop guest play.</p><div class="mt-3 flex flex-wrap gap-2"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Accept optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Reject optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Customize</button></div></aside></div><!--root-end-->
+  </body>
+</html>

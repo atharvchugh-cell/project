@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/project/favicon.ico" sizes="any" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Security headers (meta-injectable subset). X-Frame-Options / HSTS / true CSP
+         must additionally be set at the hosting layer; these provide defense-in-depth. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.lovable.app https://*.lovable.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.lovable.app https://*.lovable.dev; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+
+    <!-- Faster paint: preconnect to font origins so DNS+TLS happens during parse. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://tmoowkcxngosiyidozrd.supabase.co" />
+
+    <meta name="google-site-verification" content="L5-GsAsOAqkdOOZB_Vqul3tMAmh0panXDVGOLtaRMzw" />
+    <meta name="author" content="Rise to Riches" />
+    
+    <!-- Non-blocking font load: print media swap then onload to async-apply, with noscript fallback. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" /></noscript>
+
+
+    <meta property="og:site_name" content="Rise to Riches" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Sitewide identity only. Page-specific schema is added per route. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://investmentsimulator.app/#organization",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "url": "https://investmentsimulator.app/",
+          "email": "contact@investmentsimulator.app",
+          "founder": { "@type": "Person", "name": "Atharv Chugh" },
+          "description": "Rise to Riches is a free investment simulator and stock market game. Players invest virtual money using real historical annual returns, solo or with a class. No account required."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://investmentsimulator.app/#website",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "description": "Free investment simulator and stock market game built on real historical annual returns.",
+          "url": "https://investmentsimulator.app/",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://investmentsimulator.app/#organization" }
+        }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/project/assets/index-C9vb9qYw.js"></script>
+    <link rel="stylesheet" crossorigin href="/project/assets/index-BtBuqOz1.css">
+      <title>About Rise to Riches — Who Makes This Simulator</title>
+    <meta name="description" content="Learn about the independent Rise to Riches project, how the historical simulator works and its data sources, educational goals and limitations." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://investmentsimulator.app/about" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About Rise to Riches — Who Makes This Simulator" />
+    <meta property="og:description" content="Learn about the independent Rise to Riches project, how the historical simulator works and its data sources, educational goals and limitations." />
+    <meta property="og:url" content="https://investmentsimulator.app/about" />
+    <meta property="og:image" content="https://investmentsimulator.app/__l5e/assets-v1/c43fbe83-25b5-4f97-a394-083fb6596f77/og-home.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="About Rise to Riches — Who Makes This Simulator" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Rise to Riches — Who Makes This Simulator" />
+    <meta name="twitter:description" content="Learn about the independent Rise to Riches project, how the historical simulator works and its data sources, educational goals and limitations." />
+    <meta name="twitter:image" content="https://investmentsimulator.app/__l5e/assets-v1/c43fbe83-25b5-4f97-a394-083fb6596f77/og-home.jpg" />
+    <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About Rise to Riches","url":"https://investmentsimulator.app/about","dateModified":"2026-08-15","mainEntity":{"@type":"Organization","name":"Rise to Riches","url":"https://investmentsimulator.app/","description":"An independent, free educational investing simulator built for high school classrooms and self-teaching beginners."}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://investmentsimulator.app/"},{"@type":"ListItem","position":2,"name":"About","item":"https://investmentsimulator.app/about"}]}</script>
+  </head>
+
+  <body>
+    <style>
+      /* Pre-mount skeleton. React replaces #root's children on first render, so
+         this is visible only while the bundle boots — it prevents the brief flash
+         of unstyled text that appeared before hydration. */
+      #app-skeleton{min-height:100vh;background:hsl(222 24% 6%);padding:64px 24px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+      #app-skeleton .sk-wrap{max-width:1152px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+      #app-skeleton .sk{background:hsl(220 18% 14%);border-radius:10px;animation:sk-pulse 1.4s ease-in-out infinite}
+      #app-skeleton .sk-title{height:56px;width:min(520px,80%)}
+      #app-skeleton .sk-sub{height:20px;width:min(680px,95%)}
+      #app-skeleton .sk-row{display:flex;gap:16px;flex-wrap:wrap}
+      #app-skeleton .sk-btn{height:64px;width:220px;border-radius:12px}
+      #app-skeleton .sk-card{height:220px;border-radius:16px;flex:1 1 260px}
+      @keyframes sk-pulse{0%,100%{opacity:.55}50%{opacity:.9}}
+      @media (prefers-reduced-motion: reduce){#app-skeleton .sk{animation:none}}
+    </style>
+    <div id="root"><main><main class="min-h-screen bg-background text-foreground"><div class="mx-auto max-w-3xl px-6 py-16"><nav class="mb-8 text-sm text-muted-foreground" aria-label="Breadcrumb"><a class="hover:text-foreground" href="/project">Home</a><span class="mx-2">/</span><span class="text-foreground">About</span></nav><header class="mb-12"><p class="mb-3 text-[10px] font-mono uppercase tracking-[0.3em] text-primary">About</p><h1 class="mb-4 text-4xl md:text-6xl font-editorial font-semibold font-normal leading-[1.05] tracking-tight">About Rise to Riches</h1><p class="text-lg text-muted-foreground">Rise to Riches is a free investment simulator that replays real market history with virtual money. It is an independent educational project — there is no brokerage behind it, nothing is for sale, and no account is required to play.</p><p class="mt-4 text-sm text-muted-foreground">Last reviewed <time dateTime="2026-08-15">15 August 2026</time></p></header><section class="mb-12 space-y-4"><h2 class="flex items-center gap-2 text-2xl font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open h-6 w-6 text-primary" aria-hidden="true"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg> Why it exists</h2><p>This project compresses recorded annual market history into a class period rather than waiting for live prices. Depending on the years chosen, students can explore a bubble, a crash or a recovery and compare their result with an index fund over the same period. One run is not evidence of investing skill.</p><p>The simulator is free and needs no student accounts. School web filters differ, so teachers should check it loads on their network. Teachers can run a whole class from one room code; see the<!-- --> <a class="text-primary underline underline-offset-4" href="/project/for-teachers">classroom page</a>.</p></section><section class="mb-12 space-y-4"><h2 class="flex items-center gap-2 text-2xl font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database h-6 w-6 text-primary" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg> Where the numbers come from</h2><p>Asset paths are built from recorded annual returns for each asset in each calendar year. The moves inside each year are simulated, not historical daily prices, so prices move continuously during play. Within a year, the path wanders; the year&#x27;s start and end points match the historical record. Certificates of deposit and the savings account use stored annual rate tables with simplified product rules.</p><p>The full list of assets, the year ranges covered, the data sources and the known simplifications are documented on the<!-- --> <a class="text-primary underline underline-offset-4" href="/project/methodology">methodology page</a>. If you spot a year that looks wrong, that page is the right thing to check first — and the request box on the homepage is the fastest way to tell us.</p></section><section class="mb-12 space-y-4"><h2 class="flex items-center gap-2 text-2xl font-semibold"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check h-6 w-6 text-primary" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg> Limits and disclaimer</h2><p>This is a simulation for education. It is not investment advice, not a brokerage, and not a prediction of future returns. Simulated results ignore taxes, trading costs, spreads and the emotional weight of risking real money. A strategy that wins here can lose badly in a live market.</p><p>Basic and Advanced stock games use visible calendar years, so recognizing an era can create hindsight. Hard Client Contracts conceals the historical period. All modes are practice, not a test of future investment performance.</p></section><section class="rounded-2xl border border-primary/30 bg-primary/5 p-8"><h2 class="mb-3 text-2xl font-semibold">Start with the simulator</h2><p class="mb-6 text-muted-foreground">The quickest way to understand the project is to play ten years of it.</p><div class="flex flex-wrap gap-3"><a class="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-transform" href="/project">Play the simulator<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a class="inline-flex items-center gap-2 rounded-lg border border-border/60 px-6 py-3 font-semibold transition-colors hover:bg-card/60" href="/project/learn">Browse the lessons</a></div></section></div></main></main><nav aria-label="Legal and privacy" class="border-t border-border bg-background px-4 py-5 flex flex-wrap justify-center gap-5 text-xs text-muted-foreground"><a href="/project/privacy">Privacy</a><a href="/project/terms">Terms</a><a href="/project/cookies">Cookies &amp; storage</a><a href="/project/contact">Contact</a><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary underline-offset-4 hover:underline h-auto p-0 text-xs">Privacy settings</button></nav><aside aria-label="Optional analytics choices" class="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-2xl rounded-lg border border-border bg-card p-4 shadow-lg"><p class="text-sm font-semibold">Your privacy choices</p><p class="mt-1 text-xs text-muted-foreground">Necessary storage supports sign-in, requested saves, rooms and abuse protection. Optional game and tutorial analytics stay off unless you accept. Rejecting does not stop guest play.</p><div class="mt-3 flex flex-wrap gap-2"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Accept optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Reject optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Customize</button></div></aside></div><!--root-end-->
+  </body>
+</html>

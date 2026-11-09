@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/project/favicon.ico" sizes="any" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Security headers (meta-injectable subset). X-Frame-Options / HSTS / true CSP
+         must additionally be set at the hosting layer; these provide defense-in-depth. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.lovable.app https://*.lovable.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.lovable.app https://*.lovable.dev; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+
+    <!-- Faster paint: preconnect to font origins so DNS+TLS happens during parse. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://tmoowkcxngosiyidozrd.supabase.co" />
+
+    <meta name="google-site-verification" content="L5-GsAsOAqkdOOZB_Vqul3tMAmh0panXDVGOLtaRMzw" />
+    <meta name="author" content="Rise to Riches" />
+    
+    <!-- Non-blocking font load: print media swap then onload to async-apply, with noscript fallback. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" /></noscript>
+
+
+    <meta property="og:site_name" content="Rise to Riches" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Sitewide identity only. Page-specific schema is added per route. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://investmentsimulator.app/#organization",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "url": "https://investmentsimulator.app/",
+          "email": "contact@investmentsimulator.app",
+          "founder": { "@type": "Person", "name": "Atharv Chugh" },
+          "description": "Rise to Riches is a free investment simulator and stock market game. Players invest virtual money using real historical annual returns, solo or with a class. No account required."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://investmentsimulator.app/#website",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "description": "Free investment simulator and stock market game built on real historical annual returns.",
+          "url": "https://investmentsimulator.app/",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://investmentsimulator.app/#organization" }
+        }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/project/assets/index-C9vb9qYw.js"></script>
+    <link rel="stylesheet" crossorigin href="/project/assets/index-BtBuqOz1.css">
+      <title>Real Estate Game — Build Your Property Empire</title>
+    <meta name="description" content="Play a free property investing game across ten U.S. city markets. Trade virtual properties using stored 1990–2020 prices. No account needed." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://investmentsimulator.app/real-estate-game" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Real Estate Game — Build Your Property Empire" />
+    <meta property="og:description" content="Play a free property investing game across ten U.S. city markets. Trade virtual properties using stored 1990–2020 prices. No account needed." />
+    <meta property="og:url" content="https://investmentsimulator.app/real-estate-game" />
+    <meta property="og:image" content="https://investmentsimulator.app/__l5e/assets-v1/0fd6bfd3-b2d7-474f-8908-8303527ccdd1/og-realestate.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Real Estate Game — Build Your Property Empire" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Real Estate Game — Build Your Property Empire" />
+    <meta name="twitter:description" content="Play a free property investing game across ten U.S. city markets. Trade virtual properties using stored 1990–2020 prices. No account needed." />
+    <meta name="twitter:image" content="https://investmentsimulator.app/__l5e/assets-v1/0fd6bfd3-b2d7-474f-8908-8303527ccdd1/og-realestate.jpg" />
+    <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Real Estate Game — Rise to Riches","url":"https://investmentsimulator.app/real-estate-game","description":"Practice trading whole virtual property units across ten U.S. city markets using stored 1990–2020 prices and synthetic within-year moves. Free educational simulation, no account needed; no mortgages or rental income.","applicationCategory":"GameApplication","genre":["Simulation","Educational","Finance"],"operatingSystem":"Web Browser","gamePlatform":"Web Browser","isAccessibleForFree":true,"inLanguage":"en","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://investmentsimulator.app/#organization"}}</script>
+  </head>
+
+  <body>
+    <style>
+      /* Pre-mount skeleton. React replaces #root's children on first render, so
+         this is visible only while the bundle boots — it prevents the brief flash
+         of unstyled text that appeared before hydration. */
+      #app-skeleton{min-height:100vh;background:hsl(222 24% 6%);padding:64px 24px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+      #app-skeleton .sk-wrap{max-width:1152px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+      #app-skeleton .sk{background:hsl(220 18% 14%);border-radius:10px;animation:sk-pulse 1.4s ease-in-out infinite}
+      #app-skeleton .sk-title{height:56px;width:min(520px,80%)}
+      #app-skeleton .sk-sub{height:20px;width:min(680px,95%)}
+      #app-skeleton .sk-row{display:flex;gap:16px;flex-wrap:wrap}
+      #app-skeleton .sk-btn{height:64px;width:220px;border-radius:12px}
+      #app-skeleton .sk-card{height:220px;border-radius:16px;flex:1 1 260px}
+      @keyframes sk-pulse{0%,100%{opacity:.55}50%{opacity:.9}}
+      @media (prefers-reduced-motion: reduce){#app-skeleton .sk{animation:none}}
+    </style>
+    <div id="root"><main><div class="min-h-screen bg-background flex items-center justify-center p-4" style="overscroll-behavior:none"><div class="max-w-md w-full space-y-6"><button class="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left w-4 h-4"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg> Back to Rise to Riches</button><div class="space-y-2"><div class="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house w-5 h-5 text-amber-400"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><h1 class="text-2xl font-display font-bold">Real Estate Game — Build Your Property Empire</h1></div><p class="text-sm text-muted-foreground">Set up your game and start trading across major U.S. cities.</p></div><div class="space-y-4"><div><label class="text-sm font-medium mb-1 block">Player Name</label><input class="w-full rounded-lg border border-border bg-secondary/50 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400/50" placeholder="Enter your name" maxLength="20" value=""/></div><div class="flex items-center justify-between"><div><span class="text-sm font-medium">Hard Mode</span><p class="text-xs text-muted-foreground">Blur year labels</p></div><button role="switch" aria-checked="false" aria-label="Toggle hard mode" class="w-11 h-6 rounded-full transition-colors bg-secondary"><div class="w-5 h-5 rounded-full bg-white shadow transition-transform translate-x-0.5"></div></button></div><div><span class="text-sm font-medium mb-2 block">City Selection</span><div class="flex gap-2 mb-3"><button class="flex-1 py-2 rounded-lg border text-sm font-mono border-amber-400 bg-amber-400/10 text-amber-400"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shuffle w-3.5 h-3.5 inline mr-1"><path d="m18 14 4 4-4 4"></path><path d="m18 2 4 4-4 4"></path><path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"></path><path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"></path><path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45"></path></svg> Random</button><button class="flex-1 py-2 rounded-lg border text-sm font-mono border-border text-muted-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-3.5 h-3.5 inline mr-1"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg> Choose 4</button></div></div></div><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-[15px] ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 px-4 w-full bg-amber-500 hover:bg-amber-500/90 text-black font-semibold">Start Game</button><section class="space-y-3 text-sm text-muted-foreground" aria-labelledby="property-practice"><h2 id="property-practice" class="text-lg font-semibold text-foreground">Practice a property portfolio with virtual money</h2><p>Start with $500,000 in virtual cash and buy or sell whole property units across ten U.S. city markets. Choose four starting cities or let the game choose them. Another city becomes available every two simulated years while cities remain locked.</p><p>The stored city-price tables cover 1990 to 2020. The game selects a random starting year that fits your session. The default session spans 20 years, with one simulated year taking 60 seconds before pauses. Price movement within each year is generated between the stored annual values, not a live property quote.</p><p>After the starting cash, annual deposits begin at $100,000 and rise by $25,000 each year. Compare your ending cash and property value with the money deposited, rather than treating new deposits as profit. Hard Mode blurs year labels; it does not change the price tables.</p><p>This is a simplified educational game, not a property listing service. It does not model mortgages, rent, maintenance, transaction costs or taxes. Properties can be traded immediately, unlike a real home sale. No account is needed to start.</p><p>Read the <a class="text-primary underline underline-offset-4" href="/project/methodology">data methodology and limitations</a> or <a class="text-primary underline underline-offset-4" href="/project/contact">contact us about the game</a>.</p></section></div></div></main><nav aria-label="Legal and privacy" class="border-t border-border bg-background px-4 py-5 flex flex-wrap justify-center gap-5 text-xs text-muted-foreground"><a href="/project/privacy">Privacy</a><a href="/project/terms">Terms</a><a href="/project/cookies">Cookies &amp; storage</a><a href="/project/contact">Contact</a><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary underline-offset-4 hover:underline h-auto p-0 text-xs">Privacy settings</button></nav><aside aria-label="Optional analytics choices" class="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-2xl rounded-lg border border-border bg-card p-4 shadow-lg"><p class="text-sm font-semibold">Your privacy choices</p><p class="mt-1 text-xs text-muted-foreground">Necessary storage supports sign-in, requested saves, rooms and abuse protection. Optional game and tutorial analytics stay off unless you accept. Rejecting does not stop guest play.</p><div class="mt-3 flex flex-wrap gap-2"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Accept optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Reject optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Customize</button></div></aside></div><!--root-end-->
+  </body>
+</html>

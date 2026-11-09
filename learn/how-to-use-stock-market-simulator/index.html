@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/project/favicon.ico" sizes="any" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Security headers (meta-injectable subset). X-Frame-Options / HSTS / true CSP
+         must additionally be set at the hosting layer; these provide defense-in-depth. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.lovable.app https://*.lovable.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.lovable.app https://*.lovable.dev; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+
+    <!-- Faster paint: preconnect to font origins so DNS+TLS happens during parse. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://tmoowkcxngosiyidozrd.supabase.co" />
+
+    <meta name="google-site-verification" content="L5-GsAsOAqkdOOZB_Vqul3tMAmh0panXDVGOLtaRMzw" />
+    <meta name="author" content="Rise to Riches" />
+    
+    <!-- Non-blocking font load: print media swap then onload to async-apply, with noscript fallback. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" /></noscript>
+
+
+    <meta property="og:site_name" content="Rise to Riches" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Sitewide identity only. Page-specific schema is added per route. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://investmentsimulator.app/#organization",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "url": "https://investmentsimulator.app/",
+          "email": "contact@investmentsimulator.app",
+          "founder": { "@type": "Person", "name": "Atharv Chugh" },
+          "description": "Rise to Riches is a free investment simulator and stock market game. Players invest virtual money using real historical annual returns, solo or with a class. No account required."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://investmentsimulator.app/#website",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "description": "Free investment simulator and stock market game built on real historical annual returns.",
+          "url": "https://investmentsimulator.app/",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://investmentsimulator.app/#organization" }
+        }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/project/assets/index-C9vb9qYw.js"></script>
+    <link rel="stylesheet" crossorigin href="/project/assets/index-BtBuqOz1.css">
+      <title>How to Use the Stock Market Simulator — Beginner Walkthrough</title>
+    <meta name="description" content="Learn Rise to Riches step by step: choose a mode and era, track deposits versus profit, compare with the S&amp;P 500, save a game or play with a class." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://investmentsimulator.app/learn/how-to-use-stock-market-simulator" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How to Use the Stock Market Simulator — Beginner Walkthrough" />
+    <meta property="og:description" content="Learn Rise to Riches step by step: choose a mode and era, track deposits versus profit, compare with the S&amp;P 500, save a game or play with a class." />
+    <meta property="og:url" content="https://investmentsimulator.app/learn/how-to-use-stock-market-simulator" />
+    <meta property="og:image" content="https://investmentsimulator.app/__l5e/assets-v1/c43fbe83-25b5-4f97-a394-083fb6596f77/og-home.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="How to Use the Stock Market Simulator — Beginner Walkthrough" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Use the Stock Market Simulator — Beginner Walkthrough" />
+    <meta name="twitter:description" content="Learn Rise to Riches step by step: choose a mode and era, track deposits versus profit, compare with the S&amp;P 500, save a game or play with a class." />
+    <meta name="twitter:image" content="https://investmentsimulator.app/__l5e/assets-v1/c43fbe83-25b5-4f97-a394-083fb6596f77/og-home.jpg" />
+    <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://investmentsimulator.app/"},{"@type":"ListItem","position":2,"name":"Learn","item":"https://investmentsimulator.app/learn"},{"@type":"ListItem","position":3,"name":"How to use the simulator","item":"https://investmentsimulator.app/learn/how-to-use-stock-market-simulator"}]}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Use the Stock Market Simulator — Beginner Walkthrough","url":"https://investmentsimulator.app/learn/how-to-use-stock-market-simulator","inLanguage":"en","isAccessibleForFree":true,"publisher":{"@id":"https://investmentsimulator.app/#organization"},"isPartOf":{"@id":"https://investmentsimulator.app/#website"}}</script>
+  </head>
+
+  <body>
+    <style>
+      /* Pre-mount skeleton. React replaces #root's children on first render, so
+         this is visible only while the bundle boots — it prevents the brief flash
+         of unstyled text that appeared before hydration. */
+      #app-skeleton{min-height:100vh;background:hsl(222 24% 6%);padding:64px 24px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+      #app-skeleton .sk-wrap{max-width:1152px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+      #app-skeleton .sk{background:hsl(220 18% 14%);border-radius:10px;animation:sk-pulse 1.4s ease-in-out infinite}
+      #app-skeleton .sk-title{height:56px;width:min(520px,80%)}
+      #app-skeleton .sk-sub{height:20px;width:min(680px,95%)}
+      #app-skeleton .sk-row{display:flex;gap:16px;flex-wrap:wrap}
+      #app-skeleton .sk-btn{height:64px;width:220px;border-radius:12px}
+      #app-skeleton .sk-card{height:220px;border-radius:16px;flex:1 1 260px}
+      @keyframes sk-pulse{0%,100%{opacity:.55}50%{opacity:.9}}
+      @media (prefers-reduced-motion: reduce){#app-skeleton .sk{animation:none}}
+    </style>
+    <div id="root"><main><article class="min-h-screen bg-background text-foreground"><div class="mx-auto max-w-3xl px-6 py-16 leading-relaxed"><nav class="mb-8 text-sm text-muted-foreground" aria-label="Breadcrumb"><a class="hover:text-foreground" href="/project">Home</a><span class="mx-2">/</span><a class="hover:text-foreground" href="/project/learn">Learn</a><span class="mx-2">/</span><span class="text-foreground">How to use the simulator</span></nav><header class="mb-10"><p class="mb-3 text-[10px] font-mono uppercase tracking-[0.3em] text-primary">Walkthrough</p><h1 class="mb-4 text-4xl md:text-5xl font-editorial font-semibold leading-[1.05] tracking-tight">How to use the Rise to Riches stock market simulator</h1><p class="text-lg text-muted-foreground">This page walks through the controls the game has today, in the order you meet them. Everything uses virtual money. You do not need an account to play.</p></header><h2 class="mb-3 mt-12 text-2xl font-semibold">1. Start a game</h2><p>On the homepage you have two main buttons:</p><ul class="list-disc space-y-2 pl-6 mt-3"><li><strong>Play Now</strong> opens a short setup. Pick a length (5, 10 or 20 years, or the full 1990 to 2025 era) and Basic or Advanced. The starting year is picked at random so you cannot choose the period. The game still shows calendar years, so this does not remove hindsight.</li><li><strong>Customize</strong>, from that same setup, lets you choose the start year and length yourself (within 1990 to 2025) and which stocks you start with.</li><li><strong>Play With Friends</strong> opens multiplayer, where one person hosts a room and others join with a code.</li></ul><h2 class="mb-3 mt-12 text-2xl font-semibold">2. Basic, Advanced and Hard</h2><ul class="list-disc space-y-2 pl-6"><li><strong>Basic</strong> starts you with a small set of stocks, plus an S&amp;P 500 index fund, gold, oil, CDs and a high-yield savings account. More stocks unlock during the game.</li><li><strong>Advanced</strong> opens a search over 166 real companies, plus Bitcoin from 2010, with a Trade button and cost-basis tracking. Which companies you can buy depends on the year.</li><li><strong>Hard</strong> is used in <a class="text-primary underline underline-offset-4" href="/project/client-contracts">Client Contracts</a>, a separate fund-manager game where the years are hidden. The main stock game setup offers Basic and Advanced.</li></ul><h2 class="mb-3 mt-12 text-2xl font-semibold">3. How time and prices move</h2><p>At normal speed one simulated year takes about a minute. In solo games you can switch between 1×, 2× and 4× speed, and turn on <em>Pause at each new year</em> if you want time to think. Multiplayer games follow the host&#x27;s shared clock instead, and only the host can pause. Each year&#x27;s total change comes from that year&#x27;s real annual return. The ups and downs inside the year are generated by the simulation, so the exact path is not a replay of real daily prices. The<!-- --> <a class="text-primary underline underline-offset-4" href="/project/methodology">methodology page</a> explains this in detail.</p><h2 class="mb-3 mt-12 text-2xl font-semibold">4. Investing your cash</h2><p>You start with $5,000 and receive another $5,000 every simulated quarter. Open an investment to see what it is, then buy or sell shares. The recurring investment switch can split each new deposit across up to five investments you choose. Random life events, like a car repair, take money out of your cash now and then.</p><h2 class="mb-3 mt-12 text-2xl font-semibold">5. Deposits are not profit</h2><p>Your return only counts what your investments earned. The $5,000 deposits and life-event costs are left out of the return, so someone who simply held cash would show close to 0%, not a big gain. Keep this in mind when you compare your final wealth with a friend who played a longer game.</p><h2 class="mb-3 mt-12 text-2xl font-semibold">6. The benchmark at the end</h2><p>When the game ends you see how your return compares with putting the same deposits into the S&amp;P 500 index fund over the same years. Beating that benchmark is harder than it sounds, and it is the most useful number on the end screen.</p><h2 class="mb-3 mt-12 text-2xl font-semibold">7. Saving and resuming</h2><p><em>Save and exit</em> keeps your game in this browser so you can pick it up later from the Continue card on the homepage. Saves live on the device you played on. Quitting a game instead removes its save. If you are signed in, finished games can also show up in your account history.</p><h2 class="mb-3 mt-12 text-2xl font-semibold">8. Solo or classroom</h2><p>Solo games are for practice on your own. In a multiplayer room everyone plays the same years at the same time on the host&#x27;s clock. A host can turn on Classroom when creating the room, which turns chat off by default, turns off AI feedback and keeps results off the public leaderboard. See the<!-- --> <a class="text-primary underline underline-offset-4" href="/project/for-teachers">teacher guide</a> for running it with a class.</p><h2 class="mb-3 mt-12 text-2xl font-semibold">First-session exercises</h2><ol class="list-decimal space-y-2 pl-6"><li>Use Customize to set a start year, a 5-year length and Basic mode. Put every deposit into the S&amp;P 500 index fund. Note your return. This is your baseline.</li><li>Use Customize again with the same start year, length and mode, and invest every deposit the same way in time, but split it between three or four investments. Did you beat your baseline? The moves inside each year and life events are random, so one pair of runs is not proof.</li><li>With the same Customize settings, try a game with recurring investment on, then one where you trade often. Which one took more effort for a better result?</li><li>Use Customize to start in 2000 or 2007 and watch how cash, CDs and gold behave next to stocks. Our <a class="text-primary underline underline-offset-4" href="/project/learn/stock-market-crashes">crash history page</a> has ideas.</li></ol><p class="mt-12 text-sm text-muted-foreground">This is an educational simulation, not investment advice. Past returns do not predict future returns. Next: <a class="text-primary underline underline-offset-4" href="/project/learn/how-diversification-works">how diversification works</a>.</p></div></article></main><nav aria-label="Legal and privacy" class="border-t border-border bg-background px-4 py-5 flex flex-wrap justify-center gap-5 text-xs text-muted-foreground"><a href="/project/privacy">Privacy</a><a href="/project/terms">Terms</a><a href="/project/cookies">Cookies &amp; storage</a><a href="/project/contact">Contact</a><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary underline-offset-4 hover:underline h-auto p-0 text-xs">Privacy settings</button></nav><aside aria-label="Optional analytics choices" class="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-2xl rounded-lg border border-border bg-card p-4 shadow-lg"><p class="text-sm font-semibold">Your privacy choices</p><p class="mt-1 text-xs text-muted-foreground">Necessary storage supports sign-in, requested saves, rooms and abuse protection. Optional game and tutorial analytics stay off unless you accept. Rejecting does not stop guest play.</p><div class="mt-3 flex flex-wrap gap-2"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Accept optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Reject optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Customize</button></div></aside></div><!--root-end-->
+  </body>
+</html>

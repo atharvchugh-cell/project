@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/project/favicon.ico" sizes="any" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Security headers (meta-injectable subset). X-Frame-Options / HSTS / true CSP
+         must additionally be set at the hosting layer; these provide defense-in-depth. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.lovable.app https://*.lovable.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.lovable.app https://*.lovable.dev; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+
+    <!-- Faster paint: preconnect to font origins so DNS+TLS happens during parse. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://tmoowkcxngosiyidozrd.supabase.co" />
+
+    <meta name="google-site-verification" content="L5-GsAsOAqkdOOZB_Vqul3tMAmh0panXDVGOLtaRMzw" />
+    <meta name="author" content="Rise to Riches" />
+    
+    <!-- Non-blocking font load: print media swap then onload to async-apply, with noscript fallback. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" /></noscript>
+
+
+    <meta property="og:site_name" content="Rise to Riches" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Sitewide identity only. Page-specific schema is added per route. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://investmentsimulator.app/#organization",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "url": "https://investmentsimulator.app/",
+          "email": "contact@investmentsimulator.app",
+          "founder": { "@type": "Person", "name": "Atharv Chugh" },
+          "description": "Rise to Riches is a free investment simulator and stock market game. Players invest virtual money using real historical annual returns, solo or with a class. No account required."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://investmentsimulator.app/#website",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "description": "Free investment simulator and stock market game built on real historical annual returns.",
+          "url": "https://investmentsimulator.app/",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://investmentsimulator.app/#organization" }
+        }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/project/assets/index-C9vb9qYw.js"></script>
+    <link rel="stylesheet" crossorigin href="/project/assets/index-BtBuqOz1.css">
+      <title>Privacy — Rise to Riches</title>
+    <meta name="description" content="How Rise to Riches collects, uses and keeps your data, with your privacy choices and how to contact us." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://investmentsimulator.app/privacy" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Privacy — Rise to Riches" />
+    <meta property="og:description" content="How Rise to Riches collects, uses and keeps your data, with your privacy choices and how to contact us." />
+    <meta property="og:url" content="https://investmentsimulator.app/privacy" />
+    <meta property="og:image" content="https://investmentsimulator.app/__l5e/assets-v1/c43fbe83-25b5-4f97-a394-083fb6596f77/og-home.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Privacy — Rise to Riches" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Privacy — Rise to Riches" />
+    <meta name="twitter:description" content="How Rise to Riches collects, uses and keeps your data, with your privacy choices and how to contact us." />
+    <meta name="twitter:image" content="https://investmentsimulator.app/__l5e/assets-v1/c43fbe83-25b5-4f97-a394-083fb6596f77/og-home.jpg" />
+  </head>
+
+  <body>
+    <style>
+      /* Pre-mount skeleton. React replaces #root's children on first render, so
+         this is visible only while the bundle boots — it prevents the brief flash
+         of unstyled text that appeared before hydration. */
+      #app-skeleton{min-height:100vh;background:hsl(222 24% 6%);padding:64px 24px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+      #app-skeleton .sk-wrap{max-width:1152px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+      #app-skeleton .sk{background:hsl(220 18% 14%);border-radius:10px;animation:sk-pulse 1.4s ease-in-out infinite}
+      #app-skeleton .sk-title{height:56px;width:min(520px,80%)}
+      #app-skeleton .sk-sub{height:20px;width:min(680px,95%)}
+      #app-skeleton .sk-row{display:flex;gap:16px;flex-wrap:wrap}
+      #app-skeleton .sk-btn{height:64px;width:220px;border-radius:12px}
+      #app-skeleton .sk-card{height:220px;border-radius:16px;flex:1 1 260px}
+      @keyframes sk-pulse{0%,100%{opacity:.55}50%{opacity:.9}}
+      @media (prefers-reduced-motion: reduce){#app-skeleton .sk{animation:none}}
+    </style>
+    <div id="root"><main><div class="min-h-screen bg-background text-foreground"><article class="max-w-3xl mx-auto px-5 py-12"><a class="text-sm text-muted-foreground" href="/project">← Rise to Riches</a><h1 class="text-4xl font-display font-semibold mt-10">Privacy</h1><p class="text-xs text-muted-foreground mt-3">Version 1.0 · Effective October 14, 2026</p><p class="text-lg mt-6 leading-relaxed">Accounts are optional, analytics is your choice, and suggestions stay private unless you permit a reviewed public summary.</p><div class="space-y-8 mt-10"><section><h2 class="text-xl font-semibold mb-3">Operator and contact</h2><p class="text-sm text-muted-foreground leading-7">Rise to Riches is operated by Atharv Chugh in Georgia, USA. Email contact@investmentsimulator.app for privacy, access, correction, deletion or safety requests. We may need to confirm you own the data. Never send passwords or access tokens.</p></section><section><h2 class="text-xl font-semibold mb-3">Information processed</h2><p class="text-sm text-muted-foreground leading-7">Depending on what you use, we process your email or Google account details, chosen names, game history, browser and device session IDs, room membership, holdings, chat, suggestions and optional contact details. AI requests contain game statistics or Sandbox prompts. Quota and security systems use pseudonymous IDs, IP-derived information and logs. Persistent IDs and hashed IPs are not guaranteed to be anonymous.</p></section><section><h2 class="text-xl font-semibold mb-3">Optional collection</h2><p class="text-sm text-muted-foreground leading-7">Optional analytics for game finishes, the tutorial and Sandbox navigation is off by default. You can accept, reject or withdraw it in Privacy settings. Query strings and fragments are removed from referrers the app sends. Saves, accounts, room access, abuse controls and submissions you request work whether or not you allow analytics.</p></section><section><h2 class="text-xl font-semibold mb-3">Public and private information</h2><p class="text-sm text-muted-foreground leading-7">Account profiles are private by default. You can choose a discoverable social profile or share it only with friends. Your chosen social name and avatar appear to players you send requests to. Friend requests, relationships, blocks, safety reports and recipient notifications are stored to provide the features you request. Activity sharing is off by default and visible only to accepted friends when you turn it on. Blocking stops friend interactions and presence sharing. Administrators can see operational player and AI information. Players in a room see its standings and chat. In rooms the host marks as Classroom, chat is off unless the host turns it on, AI feedback is off, and results are not posted to the public leaderboard. A score you submit to the leaderboard is public with the name you chose. A challenge or result link you create can be opened by anyone who has it. Your email, account details and game history stay private. Anyone can email contact@investmentsimulator.app to remove a public score or link. A suggestion is only published if you give permission, an administrator reviews a summary and then publishes it. Replying to a suggestion does not publish the original message.</p></section><section><h2 class="text-xl font-semibold mb-3">Providers</h2><p class="text-sm text-muted-foreground leading-7">These providers process data under their own terms. Lovable hosts the site, and Lovable Cloud runs the database, sign-in and server functions (Lovable privacy policy: <a href="https://lovable.dev/privacy" target="_blank" rel="noopener noreferrer" class="text-primary underline">lovable.dev/privacy</a>). Google handles Google sign-in (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary underline">policies.google.com/privacy</a>). Emails are sent through Lovable’s email service. AI reviews and Sandbox events go through Lovable’s AI gateway to Google Gemini (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-primary underline">policies.google.com/privacy</a>). We do not claim that these providers keep no data.</p></section><section><h2 class="text-xl font-semibold mb-3">Your data and retention</h2><p class="text-sm text-muted-foreground leading-7">Signed-in users can export their profile, runs, linked AI usage and their social relationships, blocks, reports and notifications, delete individual runs, and clear game data on this device. To delete your account, email contact@investmentsimulator.app and we delete the account and its linked data within 30 days. A finished game that failed to save is kept on your device for up to 60 days, and on our server until it is saved or you ask us to delete it. Other data, including guest submissions and room messages, is kept until you delete it or ask us to. Local saves stay until you clear them.</p></section><section><h2 class="text-xl font-semibold mb-3">Where data is processed</h2><p class="text-sm text-muted-foreground leading-7">The service is run from the United States. Data is processed in the US and wherever the providers above operate. Depending on where you live, you may have rights such as access, correction or deletion. Email us to use them.</p></section><section><h2 class="text-xl font-semibold mb-3">Children</h2><p class="text-sm text-muted-foreground leading-7">The service is intended for users 13 and older. Users under 13 must not create an account, use room chat or enter their real name. We do not knowingly collect personal information from children under 13. If we learn we have, we delete it. Teachers of students under 13 should contact us first.</p></section></div><div class="mt-10 border-t border-border pt-6 flex flex-wrap gap-5 text-sm"><a href="mailto:contact@investmentsimulator.app" class="text-primary underline">contact@investmentsimulator.app</a><a class="text-primary underline" href="/project/methodology">Methodology</a></div></article></div></main><nav aria-label="Legal and privacy" class="border-t border-border bg-background px-4 py-5 flex flex-wrap justify-center gap-5 text-xs text-muted-foreground"><a href="/project/privacy">Privacy</a><a href="/project/terms">Terms</a><a href="/project/cookies">Cookies &amp; storage</a><a href="/project/contact">Contact</a><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary underline-offset-4 hover:underline h-auto p-0 text-xs">Privacy settings</button></nav><aside aria-label="Optional analytics choices" class="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-2xl rounded-lg border border-border bg-card p-4 shadow-lg"><p class="text-sm font-semibold">Your privacy choices</p><p class="mt-1 text-xs text-muted-foreground">Necessary storage supports sign-in, requested saves, rooms and abuse protection. Optional game and tutorial analytics stay off unless you accept. Rejecting does not stop guest play.</p><div class="mt-3 flex flex-wrap gap-2"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Accept optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Reject optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Customize</button></div></aside></div><!--root-end-->
+  </body>
+</html>

@@ -1,0 +1,1 @@
+import{b as i}from"./index-C9vb9qYw.js";const s=15*60*1e3;function c(t,e){const r=i.useRef(e);r.current=e,i.useEffect(()=>{if(!t)return;const n=setInterval(()=>{document.visibilityState==="visible"&&r.current()},s);return()=>clearInterval(n)},[t])}export{c as u};

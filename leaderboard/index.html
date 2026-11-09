@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/project/favicon.ico" sizes="any" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Security headers (meta-injectable subset). X-Frame-Options / HSTS / true CSP
+         must additionally be set at the hosting layer; these provide defense-in-depth. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://*.lovable.app https://*.lovable.dev; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://*.lovable.app https://*.lovable.dev; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="permissions-policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()" />
+
+    <!-- Faster paint: preconnect to font origins so DNS+TLS happens during parse. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://tmoowkcxngosiyidozrd.supabase.co" />
+
+    <meta name="google-site-verification" content="L5-GsAsOAqkdOOZB_Vqul3tMAmh0panXDVGOLtaRMzw" />
+    <meta name="author" content="Rise to Riches" />
+    
+    <!-- Non-blocking font load: print media swap then onload to async-apply, with noscript fallback. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" /></noscript>
+
+
+    <meta property="og:site_name" content="Rise to Riches" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Sitewide identity only. Page-specific schema is added per route. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://investmentsimulator.app/#organization",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "url": "https://investmentsimulator.app/",
+          "email": "contact@investmentsimulator.app",
+          "founder": { "@type": "Person", "name": "Atharv Chugh" },
+          "description": "Rise to Riches is a free investment simulator and stock market game. Players invest virtual money using real historical annual returns, solo or with a class. No account required."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://investmentsimulator.app/#website",
+          "name": "Rise to Riches",
+          "alternateName": ["Investment Simulator", "investmentsimulator.app"],
+          "description": "Free investment simulator and stock market game built on real historical annual returns.",
+          "url": "https://investmentsimulator.app/",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://investmentsimulator.app/#organization" }
+        }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/project/assets/index-C9vb9qYw.js"></script>
+    <link rel="stylesheet" crossorigin href="/project/assets/index-BtBuqOz1.css">
+      <title>Leaderboard — Stock Simulator Hall of Fame</title>
+    <meta name="description" content="Top stock-simulator players ranked by final wealth and % return across historical windows like 2000–2020 and 1990–2010." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://investmentsimulator.app/leaderboard" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Leaderboard — Stock Simulator Hall of Fame" />
+    <meta property="og:description" content="Top stock-simulator players ranked by final wealth and % return across historical windows like 2000–2020 and 1990–2010." />
+    <meta property="og:url" content="https://investmentsimulator.app/leaderboard" />
+    <meta property="og:image" content="https://investmentsimulator.app/__l5e/assets-v1/c43fbe83-25b5-4f97-a394-083fb6596f77/og-home.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Leaderboard — Stock Simulator Hall of Fame" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Leaderboard — Stock Simulator Hall of Fame" />
+    <meta name="twitter:description" content="Top stock-simulator players ranked by final wealth and % return across historical windows like 2000–2020 and 1990–2010." />
+    <meta name="twitter:image" content="https://investmentsimulator.app/__l5e/assets-v1/c43fbe83-25b5-4f97-a394-083fb6596f77/og-home.jpg" />
+    <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Leaderboard — Stock Simulator Hall of Fame","description":"Top stock-simulator players ranked by final wealth and % return across historical windows.","url":"https://investmentsimulator.app/leaderboard","isPartOf":{"@id":"https://investmentsimulator.app/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://investmentsimulator.app/"},{"@type":"ListItem","position":2,"name":"Leaderboard","item":"https://investmentsimulator.app/leaderboard"}]}}</script><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Investment Simulator Leaderboard","description":"Top stock-simulator players ranked by final wealth and percentage return.","url":"https://investmentsimulator.app/leaderboard","numberOfItems":0,"itemListOrder":"https://schema.org/ItemListOrderDescending","itemListElement":[]}</script>
+  </head>
+
+  <body>
+    <style>
+      /* Pre-mount skeleton. React replaces #root's children on first render, so
+         this is visible only while the bundle boots — it prevents the brief flash
+         of unstyled text that appeared before hydration. */
+      #app-skeleton{min-height:100vh;background:hsl(222 24% 6%);padding:64px 24px;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+      #app-skeleton .sk-wrap{max-width:1152px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+      #app-skeleton .sk{background:hsl(220 18% 14%);border-radius:10px;animation:sk-pulse 1.4s ease-in-out infinite}
+      #app-skeleton .sk-title{height:56px;width:min(520px,80%)}
+      #app-skeleton .sk-sub{height:20px;width:min(680px,95%)}
+      #app-skeleton .sk-row{display:flex;gap:16px;flex-wrap:wrap}
+      #app-skeleton .sk-btn{height:64px;width:220px;border-radius:12px}
+      #app-skeleton .sk-card{height:220px;border-radius:16px;flex:1 1 260px}
+      @keyframes sk-pulse{0%,100%{opacity:.55}50%{opacity:.9}}
+      @media (prefers-reduced-motion: reduce){#app-skeleton .sk{animation:none}}
+    </style>
+    <div id="root"><main><div class="min-h-screen bg-background text-foreground"><div class="max-w-5xl mx-auto px-5 md:px-10 py-10 md:py-14"><div class="mb-10"><a class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm" href="/project"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left w-3.5 h-3.5" aria-hidden="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>Index</a></div><header class="mb-10"><div class="flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground/80 mb-3"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71L12 2z"></path></svg>Hall of Fame · Vol. I</div><h1 class="text-4xl md:text-5xl italic mb-4 text-foreground leading-[1.05] tracking-tight">The Stock Simulator Leaderboard</h1><p class="text-muted-foreground max-w-2xl leading-relaxed text-[15px]">Top finishers across historical windows. Every run is audited against real ticker data — solo strategies, multiplayer rooms, and the long tail of compounding errors all live on the same page.</p></header><div class="mb-10 border border-border/30 bg-card/20 rounded-sm px-5 py-5"><div class="flex justify-between items-end mb-3"><span class="text-[10px] uppercase tracking-[0.25em] text-muted-foreground/80">Global distribution</span><span class="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/60">Audited returns · 1990 → 2025</span></div><div class="h-1.5 w-full bg-border/30 rounded-full overflow-hidden flex"><div class="h-full bg-[hsl(var(--gain))]/15" style="width:90%"></div><div class="h-full bg-[hsl(var(--gain))]/40" style="width:8%"></div><div class="h-full bg-yellow-500/80" style="width:2%"></div></div><div class="mt-2 flex justify-between text-[9px] uppercase tracking-[0.2em] text-muted-foreground"><span>Standard</span><span>Top 10%</span><span class="text-yellow-500/80">Top 0.1%</span></div></div><p class="mb-6 text-sm text-muted-foreground">The latest results may take a couple of hours to appear on the leaderboard.</p><div class="flex flex-wrap gap-x-10 gap-y-6 mb-8 pb-8 border-b border-border/30"><div class="space-y-2.5 "><span class="block text-[10px] uppercase tracking-[0.25em] text-muted-foreground/60 font-semibold">Historical window</span><div class="flex flex-wrap gap-1"><button class="px-3 py-1 text-[11px] rounded-sm border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-border/60 bg-card/60 text-foreground">All time</button><button class="px-3 py-1 text-[11px] rounded-sm border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-transparent text-muted-foreground hover:text-foreground hover:border-border/40">1990 – 2010</button><button class="px-3 py-1 text-[11px] rounded-sm border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-transparent text-muted-foreground hover:text-foreground hover:border-border/40">2000 – 2020</button><button class="px-3 py-1 text-[11px] rounded-sm border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-transparent text-muted-foreground hover:text-foreground hover:border-border/40">2010 – 2025</button></div></div><div class="space-y-2.5 "><span class="block text-[10px] uppercase tracking-[0.25em] text-muted-foreground/60 font-semibold">Players</span><div class="flex gap-1"><button class="px-3 py-1 text-[11px] rounded-sm border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-border/60 bg-card/60 text-foreground">All</button><button class="px-3 py-1 text-[11px] rounded-sm border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-transparent text-muted-foreground hover:text-foreground hover:border-border/40">Solo</button><button class="px-3 py-1 text-[11px] rounded-sm border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-transparent text-muted-foreground hover:text-foreground hover:border-border/40">Multiplayer</button></div></div><div class="space-y-2.5 md:ml-auto"><span class="block text-[10px] uppercase tracking-[0.25em] text-muted-foreground/60 font-semibold">Rank by</span><div class="flex gap-0.5 bg-card/40 p-0.5 rounded-sm border border-border/30"><button class="px-3 py-1 text-[11px] rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring bg-border/40 text-foreground">Final wealth</button><button class="px-3 py-1 text-[11px] rounded-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring text-muted-foreground hover:text-foreground">% Return</button></div></div></div><div class="mb-3 flex items-center justify-end gap-2 text-sm text-muted-foreground" aria-live="polite"><span class="w-1.5 h-1.5 rounded-full bg-gain/70" aria-hidden="true"></span>Loading…</div><div class="space-y-1.5"><div class="animate-pulse bg-muted h-12 w-full rounded-sm"></div><div class="animate-pulse bg-muted h-12 w-full rounded-sm"></div><div class="animate-pulse bg-muted h-12 w-full rounded-sm"></div><div class="animate-pulse bg-muted h-12 w-full rounded-sm"></div><div class="animate-pulse bg-muted h-12 w-full rounded-sm"></div><div class="animate-pulse bg-muted h-12 w-full rounded-sm"></div><div class="animate-pulse bg-muted h-12 w-full rounded-sm"></div><div class="animate-pulse bg-muted h-12 w-full rounded-sm"></div><div class="animate-pulse bg-muted h-12 w-full rounded-sm"></div><div class="animate-pulse bg-muted h-12 w-full rounded-sm"></div></div><footer class="mt-12 flex flex-col items-center gap-3 text-center"><p class="text-[10px] uppercase tracking-[0.25em] text-muted-foreground/60">Results refresh every two hours.</p><a class="px-6 py-2 border border-border/40 text-muted-foreground text-[11px] uppercase tracking-[0.2em] hover:text-foreground hover:border-border/70 transition-all rounded-sm" href="/project">Start a new run</a></footer></div></div></main><nav aria-label="Legal and privacy" class="border-t border-border bg-background px-4 py-5 flex flex-wrap justify-center gap-5 text-xs text-muted-foreground"><a href="/project/privacy">Privacy</a><a href="/project/terms">Terms</a><a href="/project/cookies">Cookies &amp; storage</a><a href="/project/contact">Contact</a><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary underline-offset-4 hover:underline h-auto p-0 text-xs">Privacy settings</button></nav><aside aria-label="Optional analytics choices" class="fixed bottom-4 left-4 right-4 z-50 mx-auto max-w-2xl rounded-lg border border-border bg-card p-4 shadow-lg"><p class="text-sm font-semibold">Your privacy choices</p><p class="mt-1 text-xs text-muted-foreground">Necessary storage supports sign-in, requested saves, rooms and abuse protection. Optional game and tutorial analytics stay off unless you accept. Rejecting does not stop guest play.</p><div class="mt-3 flex flex-wrap gap-2"><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Accept optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Reject optional</button><button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-colors duration-150 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 aria-busy:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-border bg-transparent hover:bg-secondary hover:border-foreground/20 h-9 px-3 text-sm">Customize</button></div></aside></div><!--root-end-->
+  </body>
+</html>

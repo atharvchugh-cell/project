@@ -1,0 +1,10 @@
+# Rise to Riches — Investment Simulator
+
+> Free educational investing simulations for high school classrooms. Play a 20-year stock market game or a real-estate empire builder using real historical data — unblocked, no sign-ups.
+
+## Pages
+
+- [Stock Simulator](/): 20-year stock market simulator with real historical data from 1990–2025. Solo or multiplayer classroom mode.
+- [Real Estate Game](/real-estate-game): Build a real-estate empire across U.S. cities with tiered cash injections and city unlocks.
+- [Sandbox](/sandbox): Open-ended economic sandbox combining stocks + real estate. Inject historical events into any year, control sectors/cities, and simulate custom market shocks.
+- [Beginner's Guide](/guide): A free educational guide explaining stocks, index funds, the S&P 500, gold, and CDs for high school students.
